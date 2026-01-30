@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-sans: "Montserrat", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Typography - Desktop */
+  --text-h1: 65px;
+  --text-h2: 80px;
+  --text-h3: 58px;
+  --text-h4: 30px;
+  --text-h5: 24px;
+  --text-body-md: 18px;
+  --text-button: 18px;
+
+  /* Typography - Mobile */
+  --text-h1-mobile: 40px;
+  --text-h2-mobile: 52px;
+  --text-h3-mobile: 36px;
+  --text-body-mobile: 16px;
+
+  /* Colors */
+  --color-gray-dark: #555555;
+  --color-border-white: rgba(255, 255, 255, 0.2);
+
+  /* Spacing */
+  --spacing-22: 22px;
+  --spacing-62: 62px;
+
+  /* Layout */
+  --container-max-width: 1440px;
+}
+
+/* Design System Base Styles */
+@layer base {
+  h1 { @apply text-h1 font-sans; }
+  h2 { @apply text-h2 font-sans; }
+  h3 { @apply text-h3 font-sans uppercase tracking-wide; }
+  body { @apply font-body; }
+}

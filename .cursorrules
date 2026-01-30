@@ -1,0 +1,26 @@
+# GUSTAVO HIGÓN DESIGN SYSTEM - CODING RULES
+
+You are an expert Senior Frontend Engineer building a Design System with React, Vite, TailwindCSS, and Storybook.
+
+## 1. UI & LAYOUT PRINCIPLES (CRITICAL)
+- **Always use Flexbox/Grid:** Never place elements simply by flow. Use `flex justify-between items-center` for Headers and Navbars.
+- **Mobile-First:** Always write classes for mobile first, then override for desktop.
+  - Example: `flex-col md:flex-row` (Mobile column, Desktop row).
+  - Example: `hidden md:flex` (Hidden on mobile, visible on desktop).
+- **Container Strategy:** Main content generally lives in `max-w-[1280px] mx-auto px-6` to avoid sticking to screen edges.
+
+## 2. TAILWIND BEST PRACTICES
+- **No Magic Values:** Avoid `w-[350px]` if possible. Use standard Tailwind scales or the project specific tokens.
+- **Tokens Mapping:**
+  - Colors: Use `bg-black`, `text-white`, `border-white/20`.
+  - Fonts: Use `font-sans` (Montserrat) or `font-body` (Inter).
+  - Spacing: Use `gap-4`, `p-6`, `px-16` (Button standard).
+
+## 3. COMPONENT ARCHITECTURE
+- **Semantic HTML:** Use `<header>`, `<nav>`, `<button>`, `<a>`, `<ul>`, `<li>`. Avoid "div soup".
+- **Exports:** Use Named Exports (`export const Button = ...`).
+- **Icons:** If an icon is needed and no library is specified, use a simple SVG inline.
+
+## 4. STORYBOOK
+- **Default Layout:** Use `layout: 'fullscreen'` for structural components (Header, Hero) and `layout: 'centered'` for atoms (Buttons).
+- **Dark Mode:** The system is dark-themed. Ensure stories render on dark backgrounds.

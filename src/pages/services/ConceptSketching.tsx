@@ -1,0 +1,319 @@
+import { Header } from '../../components/Header';
+import { Footer } from '../../components/Footer';
+import { Container } from '../../components/Container';
+import { Button } from '../../components/Button/Button';
+
+// Placeholder images - using existing assets
+import heroImg from '../../assets/hero-bike.jpg';
+import conceptImg from '../../assets/Concept-Sketching.png';
+import engineeringImg from '../../assets/Engineering.png';
+import virtualClayImg from '../../assets/virtual-clay .png';
+
+/* ------------------------------------------------------------------ */
+/*  Data                                                              */
+/* ------------------------------------------------------------------ */
+
+const capabilities = [
+  {
+    title: 'Paper Sketching',
+    description: 'Early ideation and fast visual exploration',
+  },
+  {
+    title: '2D Raster',
+    description: 'Photoshop and Wacom-based workflows',
+  },
+  {
+    title: '2D Vector',
+    description: 'Clean and precise concept definition',
+  },
+  {
+    title: 'AI Enhancing',
+    description: 'Fast iterations and visual refinement',
+  },
+  {
+    title: 'Graphics & Interfaces',
+    description: 'Dashboards, UI and product graphics',
+  },
+];
+
+const projects = [
+  {
+    id: 1,
+    title: 'MOTT Concept',
+    tags: ['Vector Sketching', 'Concept Design'],
+    description: 'Complete visual development from initial sketches to final concept presentation.',
+    image: conceptImg,
+    imageFirst: true,
+  },
+  {
+    id: 2,
+    title: 'BMW R1250R',
+    tags: ['Wacom Sketching', '2D Raster'],
+    description: 'Early-stage concept exploration and visual development for premium motorcycle line.',
+    image: engineeringImg,
+    imageFirst: false,
+  },
+  {
+    id: 3,
+    title: 'Swift Concept',
+    tags: ['Vector Sketching', 'AI Enhancing'],
+    description: 'Rapid concept development with modern digital tools and AI-assisted refinement.',
+    image: virtualClayImg,
+    imageFirst: true,
+  },
+  {
+    id: 4,
+    title: 'Urban Commuter',
+    tags: ['Paper Sketching', 'Vector'],
+    description: 'From napkin sketch to production-ready concept in record time.',
+    image: heroImg,
+    imageFirst: false,
+  },
+  {
+    id: 5,
+    title: 'Adventure 850',
+    tags: ['Concept Design', '2D Vector'],
+    description: 'Complete brand identity and visual language development.',
+    image: conceptImg,
+    imageFirst: true,
+  },
+  {
+    id: 6,
+    title: 'Electric Racer',
+    tags: ['AI Enhancing', 'Graphics'],
+    description: 'Next-generation electric motorcycle with cutting-edge visual design.',
+    image: engineeringImg,
+    imageFirst: false,
+  },
+  {
+    id: 7,
+    title: 'Classic Revival',
+    tags: ['Paper Sketching', '2D Raster'],
+    description: 'Modern interpretation of classic motorcycle design language.',
+    image: virtualClayImg,
+    imageFirst: true,
+  },
+  {
+    id: 8,
+    title: 'Sport Naked',
+    tags: ['Vector Sketching', 'Graphics'],
+    description: 'Aggressive styling and aerodynamic form development.',
+    image: heroImg,
+    imageFirst: false,
+  },
+  {
+    id: 9,
+    title: 'Touring Concept',
+    tags: ['Concept Design', 'AI Enhancing'],
+    description: 'Long-distance comfort meets contemporary design aesthetics.',
+    image: conceptImg,
+    imageFirst: true,
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/*  Component                                                         */
+/* ------------------------------------------------------------------ */
+
+export function ConceptSketching() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Header variant="light" />
+
+      {/* Main content - offset for fixed header */}
+      <main className="pt-20">
+        {/* Hero Section - Full width with image + gradient overlay */}
+        <section
+          className="relative h-[500px] w-full bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroImg})` }}
+        >
+          {/* Gradient Overlay: bottom 80% -> middle 40% -> top 0% black */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%)',
+            }}
+          />
+
+          {/* Hero Text - Positioned at bottom */}
+          <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-12">
+            <div className="mx-auto w-full max-w-[1440px]">
+              <h1 className="mb-[10px] font-sans text-[40px] font-normal leading-tight text-white md:text-[65px] md:leading-[79.24px]">
+                CONCEPT & SKETCHING
+              </h1>
+              <p className="font-sans text-[20px] font-semibold leading-tight text-white md:text-[24px] md:leading-[29.26px]">
+                Where ideas take shape
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Intro Split Block */}
+        <section className="w-full bg-[#656567] px-6 py-16 md:px-12 md:py-24">
+          <Container>
+            <div className="flex flex-col items-center gap-8 md:flex-row md:gap-12">
+              {/* Image */}
+              <div className="w-full md:w-1/2">
+                <img
+                  src={conceptImg}
+                  alt="Concept sketching process"
+                  className="h-auto w-full object-cover md:h-[368px]"
+                />
+              </div>
+
+              {/* Text */}
+              <div className="w-full md:w-1/2">
+                <p className="font-sans text-[24px] font-normal leading-[1.2] tracking-[0.063em] text-white md:text-[30px] md:leading-[36px] md:tracking-[1.9px]">
+                  Large experience in early product definition and concept development, helping brands
+                  transform ideas into clear, feasible and distinctive motorcycle concepts.
+                </p>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* Key Capabilities Band */}
+        <section className="w-full bg-black px-6 py-16 text-white md:px-12 md:py-24">
+          <Container>
+            {/* Section Title */}
+            <h2 className="mb-12 text-center font-sans text-[40px] font-normal leading-tight md:mb-16 md:text-[58px] md:leading-[70.7px]">
+              Key capabilities
+            </h2>
+
+            {/* Capabilities Grid */}
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-5 md:gap-6">
+              {capabilities.map((capability) => (
+                <div key={capability.title} className="flex flex-col">
+                  {/* Icon Placeholder */}
+                  <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white/10">
+                    <svg
+                      className="h-12 w-12 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                      />
+                    </svg>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="mb-2 font-sans text-[20px] font-semibold text-white md:text-[24px]">
+                    {capability.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="font-sans text-[16px] font-normal leading-relaxed text-white/90 md:text-[18px]">
+                    {capability.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+
+        {/* Projects Section */}
+        <section className="w-full bg-white py-16 md:py-24">
+          {/* Section Title */}
+          <div className="mb-12 px-6 md:px-12">
+            <Container>
+              <h2 className="font-sans text-[40px] font-normal leading-tight text-black md:text-[58px] md:leading-[70.7px]">
+                Selected Concept & Sketching Projects
+              </h2>
+            </Container>
+          </div>
+
+          {/* Projects List - No Container, full-bleed */}
+          <div className="mx-auto w-full max-w-[1440px]">
+            {projects.map((project) => (
+              <ProjectEntry key={project.id} {...project} />
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Project Entry Component                                           */
+/* ------------------------------------------------------------------ */
+
+interface ProjectEntryProps {
+  title: string;
+  tags: string[];
+  description: string;
+  image: string;
+  imageFirst: boolean;
+}
+
+function ProjectEntry({ title, tags, description, image, imageFirst }: ProjectEntryProps) {
+  const imageBlock = (
+    <div className="h-[300px] w-full md:h-[541px] md:w-1/2">
+      <img src={image} alt={title} className="h-full w-full object-cover" />
+    </div>
+  );
+
+  const textBlock = (
+    <div className="flex w-full items-center justify-center bg-white p-8 md:w-1/2 md:p-16">
+      <div className="max-w-[592px]">
+        {/* Tags */}
+        <div className="mb-4 flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <span
+              key={tag}
+              className="font-sans text-[12px] font-normal leading-tight text-[#333333] md:text-[14px] md:leading-[17.07px]"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Title */}
+        <h3 className="mb-4 font-sans text-[36px] font-normal leading-tight text-black md:text-[58px] md:leading-[70.7px]">
+          {title}
+        </h3>
+
+        {/* Description */}
+        <p className="mb-6 font-sans text-[16px] font-normal leading-relaxed text-black md:text-[18px] md:leading-[21.94px]">
+          {description}
+        </p>
+
+        {/* CTA Button */}
+        <Button variant="outline">Learn more</Button>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="flex flex-col md:flex-row">
+      {/* Mobile: always image first */}
+      <div className="md:hidden">
+        {imageBlock}
+        {textBlock}
+      </div>
+
+      {/* Desktop: alternating pattern */}
+      <div className="hidden md:contents">
+        {imageFirst ? (
+          <>
+            {imageBlock}
+            {textBlock}
+          </>
+        ) : (
+          <>
+            {textBlock}
+            {imageBlock}
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
