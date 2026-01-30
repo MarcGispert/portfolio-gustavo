@@ -1,6 +1,8 @@
+import { useParams, Link } from 'react-router-dom';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { Container } from '../../components/Container';
+import { projects } from '../../data/projects';
 
 // Placeholder images - using existing assets
 import heroImg from '../../assets/hero-bike.jpg';
@@ -9,44 +11,37 @@ import engineeringImg from '../../assets/Engineering.png';
 import virtualClayImg from '../../assets/virtual-clay .png';
 
 /* ------------------------------------------------------------------ */
-/*  Types                                                             */
-/* ------------------------------------------------------------------ */
-
-export interface ProjectDetailData {
-  title: string;
-  tagline: string;
-  heroImage: string;
-  mainImage: string;
-  galleryImages: string[];
-  paragraphs: string[];
-}
-
-export interface ProjectDetailProps {
-  project?: ProjectDetailData;
-}
-
-/* ------------------------------------------------------------------ */
-/*  Mock Data - OSSA Project                                          */
-/* ------------------------------------------------------------------ */
-
-const ossaProject: ProjectDetailData = {
-  title: 'OSSA',
-  tagline: 'Where ideas take shape',
-  heroImage: heroImg,
-  mainImage: conceptImg,
-  galleryImages: [engineeringImg, virtualClayImg],
-  paragraphs: [
-    'I was the responsible for style in the TR project for all versions but the very first (launched on autumm 2010). I designed all the graphics, all the new plastics and lots of other parts.',
-    'I created the style of the OSSA Enduro over the base designed by Xiu RDi. I designed all the plastics and graphics, as well as the muffler, in only three weeks before the EICMA 2011 show.',
-    'I designed the Explorer for OSSA alongside with Boris Sánchez. I designed all the plastics, the fuel tank, the seat, the footrests, the passenger holder, the rear brake pedal, the stickers and some other small parts. For the 2014 model I made the restyling and some of the small technical improvements.',
-  ],
-};
-
-/* ------------------------------------------------------------------ */
 /*  Component                                                         */
 /* ------------------------------------------------------------------ */
 
-export function ProjectDetail({ project = ossaProject }: ProjectDetailProps) {
+export function ProjectDetail() {
+  const { id } = useParams();
+  const project = projects.find(p => p.slug === id);
+
+  if (!project) {
+    return (
+      <div className="min-h-screen bg-white">
+        <Header variant="light" />
+        <main className="pt-20">
+          <Container>
+            <div className="py-24 text-center">
+              <h1 className="mb-4 text-4xl font-bold">Project not found</h1>
+              <Link to="/portfolio" className="text-blue-600 hover:underline">
+                Back to portfolio
+              </Link>
+            </div>
+          </Container>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  const placeholderImages = [heroImg, conceptImg, engineeringImg, virtualClayImg];
+  const heroImage = placeholderImages[0];
+  const mainImage = placeholderImages[1];
+  const galleryImages = [placeholderImages[2], placeholderImages[3]];
+  const paragraphs = project.description.split('\n').filter(p => p.trim());
   return (
     <div className="min-h-screen bg-white">
       <Header variant="light" />
@@ -56,7 +51,7 @@ export function ProjectDetail({ project = ossaProject }: ProjectDetailProps) {
         {/* Hero Section - Full width with image + gradient overlay */}
         <section
           className="relative h-[500px] w-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${project.heroImage})` }}
+          style={{ backgroundImage: `url(${heroImage})` }}
         >
           {/* Gradient Overlay: 80% -> 40% -> 0% black, top to bottom */}
           <div
@@ -74,7 +69,7 @@ export function ProjectDetail({ project = ossaProject }: ProjectDetailProps) {
                 {project.title}
               </h1>
               <p className="font-sans text-[24px] font-semibold leading-[29.256px] text-white">
-                {project.tagline}
+                {project.tags[0]}
               </p>
             </div>
           </div>
@@ -83,8 +78,8 @@ export function ProjectDetail({ project = ossaProject }: ProjectDetailProps) {
         {/* Back Link */}
         <section className="w-full bg-white py-12">
           <Container>
-            <a
-              href="#"
+            <Link
+              to="/portfolio"
               className="inline-flex items-center gap-3 font-sans text-[18px] font-normal leading-[21.942px] text-[#0A0A0A] transition-colors hover:text-gray-600"
             >
               <svg
@@ -104,7 +99,7 @@ export function ProjectDetail({ project = ossaProject }: ProjectDetailProps) {
                 />
               </svg>
               All projects
-            </a>
+            </Link>
           </Container>
         </section>
 
@@ -117,7 +112,7 @@ export function ProjectDetail({ project = ossaProject }: ProjectDetailProps) {
                 {/* Main Large Image */}
                 <div className="h-auto w-full overflow-hidden md:h-[677px]">
                   <img
-                    src={project.mainImage}
+                    src={mainImage}
                     alt={`${project.title} main`}
                     className="h-full w-full object-cover"
                   />
@@ -125,7 +120,7 @@ export function ProjectDetail({ project = ossaProject }: ProjectDetailProps) {
 
                 {/* Two Small Images - Side by side on Desktop, stacked on Mobile */}
                 <div className="flex flex-col gap-12 md:flex-row md:gap-[10px]">
-                  {project.galleryImages.map((image, index) => (
+                  {galleryImages.map((image, index) => (
                     <div
                       key={index}
                       className="h-auto w-full overflow-hidden md:h-[356px] md:w-[356px]"
@@ -150,7 +145,7 @@ export function ProjectDetail({ project = ossaProject }: ProjectDetailProps) {
 
                   {/* Body Paragraphs */}
                   <div className="flex flex-col gap-6">
-                    {project.paragraphs.map((paragraph, index) => (
+                    {paragraphs.map((paragraph, index) => (
                       <p
                         key={index}
                         className="font-sans text-[18px] font-normal leading-[21.942px] text-black"

@@ -2,6 +2,7 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { Container } from '../../components/Container';
 import { ProjectCard } from '../../components/SelectedWork/ProjectCard';
+import { projects as projectsData } from '../../data/projects';
 
 // Placeholder images - using existing assets
 import heroImg from '../../assets/hero-bike.jpg';
@@ -10,107 +11,33 @@ import engineeringImg from '../../assets/Engineering.png';
 import virtualClayImg from '../../assets/virtual-clay .png';
 
 /* ------------------------------------------------------------------ */
-/*  Data - 10 projects matching Figma design                          */
+/*  Grid Layout Configuration                                         */
 /* ------------------------------------------------------------------ */
 
-const projects = [
-  // Row 1
-  {
-    id: 1,
-    title: 'GAS GAS',
-    category: 'Concept Design',
-    image: heroImg,
-    link: '#',
-    size: 'large', // 2 columns
-    desktopGridClass: 'col-span-2',
-  },
-  {
-    id: 2,
-    title: 'ITALJET',
-    category: 'Engineering',
-    image: conceptImg,
-    link: '#',
-    size: 'small', // 1 column
-    desktopGridClass: 'col-span-1',
-  },
-  // Row 2
-  {
-    id: 3,
-    title: 'GAVARES',
-    category: 'Industrial Design',
-    image: engineeringImg,
-    link: '#',
-    size: 'small',
-    desktopGridClass: 'col-span-1',
-  },
-  {
-    id: 4,
-    title: 'OSSA',
-    category: 'Production',
-    image: virtualClayImg,
-    link: '#',
-    size: 'large',
-    desktopGridClass: 'col-span-2',
-  },
-  // Row 3
-  {
-    id: 5,
-    title: 'E-RACER',
-    category: 'Electric Mobility',
-    image: heroImg,
-    link: '#',
-    size: 'small',
-    desktopGridClass: 'col-span-1',
-  },
-  {
-    id: 6,
-    title: 'TORROT Muvi',
-    category: 'Urban Mobility',
-    image: conceptImg,
-    link: '#',
-    size: 'small',
-    desktopGridClass: 'col-span-1',
-  },
-  {
-    id: 7,
-    title: 'TORROT Velocipedo',
-    category: 'Innovation',
-    image: engineeringImg,
-    link: '#',
-    size: 'small',
-    desktopGridClass: 'col-span-1',
-    hideOnMobile: true, // Mobile only shows 8 projects
-  },
-  // Row 4
-  {
-    id: 8,
-    title: 'FACOMSA',
-    category: 'Engineering',
-    image: virtualClayImg,
-    link: '#',
-    size: 'small',
-    desktopGridClass: 'col-span-1',
-  },
-  {
-    id: 9,
-    title: 'GHION',
-    category: 'Concept',
-    image: heroImg,
-    link: '#',
-    size: 'small',
-    desktopGridClass: 'col-span-1',
-  },
-  {
-    id: 10,
-    title: 'ALPHA BOAR',
-    category: 'Performance',
-    image: conceptImg,
-    link: '#',
-    size: 'small',
-    desktopGridClass: 'col-span-1',
-    hideOnMobile: true, // Mobile only shows 8 projects
-  },
+const gridLayout = [
+  { slug: 'gas-gas', desktopGridClass: 'col-span-2', hideOnMobile: false },
+  { slug: 'italjet', desktopGridClass: 'col-span-1', hideOnMobile: false },
+  { slug: 'gavares', desktopGridClass: 'col-span-1', hideOnMobile: false },
+  { slug: 'ossa', desktopGridClass: 'col-span-2', hideOnMobile: false },
+  { slug: 'e-racer-rugged', desktopGridClass: 'col-span-1', hideOnMobile: false },
+  { slug: 'torrot-muvi', desktopGridClass: 'col-span-1', hideOnMobile: false },
+  { slug: 'torrot-velocipedo', desktopGridClass: 'col-span-1', hideOnMobile: true },
+  { slug: 'facomsa', desktopGridClass: 'col-span-1', hideOnMobile: false },
+  { slug: 'ghion', desktopGridClass: 'col-span-1', hideOnMobile: false },
+  { slug: 'alpha-boar', desktopGridClass: 'col-span-1', hideOnMobile: true },
 ];
+
+const placeholderImages = [heroImg, conceptImg, engineeringImg, virtualClayImg];
+
+const projects = projectsData.map((project, index) => {
+  const layout = gridLayout.find(l => l.slug === project.slug) || { desktopGridClass: 'col-span-1', hideOnMobile: false };
+  return {
+    ...project,
+    image: placeholderImages[index % placeholderImages.length],
+    category: project.tags[0],
+    ...layout,
+  };
+});
 
 /* ------------------------------------------------------------------ */
 /*  Component                                                         */
@@ -148,7 +75,7 @@ export function Portfolio() {
             <div className="grid auto-rows-[536px] grid-cols-1 gap-0 md:grid-cols-3">
               {projects.map((project) => (
                 <div
-                  key={project.id}
+                  key={project.slug}
                   className={`
                     ${project.desktopGridClass}
                     ${project.hideOnMobile ? 'hidden md:block' : ''}
@@ -159,7 +86,7 @@ export function Portfolio() {
                     title={project.title}
                     category={project.category}
                     image={project.image}
-                    link={project.link}
+                    link={`/project/${project.slug}`}
                   />
                 </div>
               ))}
