@@ -93,6 +93,53 @@ export const PrimaryCTADisabled: Story = {
   },
 };
 
+// Text Variant - TRUE text-based Primary CTA
+export const TextPrimaryCTA: Story = {
+  args: {
+    variant: 'text',
+    icon: ArrowRightCircle,
+    children: 'Learn More',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Text-based Primary CTA with minimal padding and content-driven hit area. Icon animates on hover with subtle translateX. No background hover block.',
+      },
+    },
+  },
+};
+
+export const TextPrimaryCTALong: Story = {
+  args: {
+    variant: 'text',
+    icon: ArrowRightCircle,
+    children: 'View All Projects',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Text CTA with longer text to show left alignment and natural content flow.',
+      },
+    },
+  },
+};
+
+export const TextPrimaryCTADisabled: Story = {
+  args: {
+    variant: 'text',
+    icon: ArrowRightCircle,
+    children: 'Learn More',
+    disabled: true,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Disabled state of text-based Primary CTA.',
+      },
+    },
+  },
+};
+
 // Mobile viewport test
 export const MobileView: Story = {
   args: {
@@ -106,6 +153,24 @@ export const MobileView: Story = {
     docs: {
       description: {
         story: 'Button on mobile viewport (320px) - ensures text does not clip with responsive padding and font size.',
+      },
+    },
+  },
+};
+
+export const TextMobileView: Story = {
+  args: {
+    variant: 'text',
+    icon: ArrowRightCircle,
+    children: 'Learn More',
+  },
+  parameters: {
+    viewport: {
+      defaultViewport: 'mobile1',
+    },
+    docs: {
+      description: {
+        story: 'Text CTA on mobile viewport - minimal padding ensures natural text flow.',
       },
     },
   },

@@ -1,7 +1,7 @@
 import type { ComponentProps } from 'react';
 import type { LucideIcon } from 'lucide-react';
 
-type ButtonVariant = 'outline' | 'solid';
+type ButtonVariant = 'outline' | 'solid' | 'text';
 
 interface ButtonProps extends ComponentProps<'button'> {
   variant?: ButtonVariant;
@@ -24,6 +24,17 @@ const base = [
 const variants: Record<ButtonVariant, string> = {
   outline: 'border-2 border-white hover:bg-white hover:text-black',
   solid: 'border-2 border-white bg-white text-black hover:bg-transparent hover:text-white',
+  text: [
+    // Text variant: minimal padding, no background, content-driven hit area
+    '!px-2 !py-2',                            // Minimal padding (8px)
+    '!justify-start',                          // Left-aligned
+    '!hover:bg-transparent',                   // No background on hover
+    'hover:!text-white/80',                    // Subtle text color change
+    'active:!text-white/60',                   // Active state
+    '!focus-visible:outline-offset-4',         // Focus ring offset for text buttons
+    'disabled:hover:!text-white',              // Disabled hover state
+    'group',                                   // Enable group hover for icon animation
+  ].join(' '),
 };
 
 export function Button({
@@ -34,6 +45,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const variantClass = variant ? variants[variant] : '';
+  const isTextVariant = variant === 'text';
 
   return (
     <button
@@ -41,7 +53,13 @@ export function Button({
       {...props}
     >
       {children}
-      {Icon && <Icon className="h-4 w-4 md:h-[18px] md:w-[18px] flex-shrink-0" />}
+      {Icon && (
+        <Icon
+          className={`h-4 w-4 md:h-[18px] md:w-[18px] flex-shrink-0 ${
+            isTextVariant ? 'transition-transform duration-200 group-hover:translate-x-0.5' : ''
+          }`.trim()}
+        />
+      )}
     </button>
   );
 }

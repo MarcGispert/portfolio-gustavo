@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { Container } from '../../components/Container';
+import { ScrollPop } from '../../components/ScrollPop';
 import { projects } from '../../data/projects';
 
 // Placeholder images - using existing assets
@@ -140,21 +141,25 @@ export function ProjectDetail() {
               <div className="mt-12 w-full md:mt-0 md:w-[678px] md:pl-0">
                 <div className="flex flex-col gap-6">
                   {/* Project Title */}
-                  <h2 className="font-sans text-[58px] font-normal leading-[70.702px] text-black">
-                    {project.title}
-                  </h2>
+                  <ScrollPop>
+                    <h2 className="font-sans text-[58px] font-normal leading-[70.702px] text-black">
+                      {project.title}
+                    </h2>
+                  </ScrollPop>
 
                   {/* Body Paragraphs */}
-                  <div className="flex flex-col gap-6">
-                    {paragraphs.map((paragraph, index) => (
-                      <p
-                        key={index}
-                        className="font-sans text-[18px] font-normal leading-[21.942px] text-black"
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
+                  <ScrollPop delay={100}>
+                    <div className="flex flex-col gap-6">
+                      {paragraphs.map((paragraph, index) => (
+                        <p
+                          key={index}
+                          className="font-sans text-[18px] font-normal leading-[21.942px] text-black"
+                        >
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  </ScrollPop>
                 </div>
               </div>
             </div>

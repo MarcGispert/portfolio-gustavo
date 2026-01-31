@@ -1,5 +1,6 @@
 import { Container } from '../Container';
 import { Button } from '../Button/Button';
+import { ScrollPop } from '../ScrollPop';
 import { ArrowRightCircle } from 'lucide-react';
 
 import conceptSketchingImg from '../../assets/Concept-Sketching.png';
@@ -68,19 +69,23 @@ export function Services() {
       {/* PART 1: HOW I HELP INTRO */}
       <div className="bg-black py-24 md:pt-24 md:pb-12">
         <Container className="px-6 md:px-12">
-          <h2 className="mb-16 font-sans text-[36px] font-semibold uppercase leading-[1.1] tracking-wide md:mb-16 md:text-[80px] md:font-normal">
-            How I Help Motorcycle Brands Bring Products to Life
-          </h2>
+          <ScrollPop>
+            <h2 className="mb-16 font-sans text-[36px] font-semibold uppercase leading-[1.1] tracking-wide md:mb-16 md:text-[80px] md:font-normal">
+              How I Help Motorcycle Brands Bring Products to Life
+            </h2>
+          </ScrollPop>
 
           <ul className="divide-y divide-white/20">
             {processSteps.map((step, index) => (
               <li key={step.title} className={index === 0 ? 'pb-8 md:pb-8' : 'py-8 md:py-8'}>
-                <h3 className="mb-4 font-sans text-[30px] font-normal uppercase tracking-[0.075em] leading-[36px] text-white md:text-[24px] md:font-semibold">
-                  {step.title}
-                </h3>
-                <p className="font-sans text-[24px] font-normal text-white md:text-[18px] md:text-gray-400">
-                  {step.description}
-                </p>
+                <ScrollPop delay={index * 100}>
+                  <h3 className="mb-4 font-sans text-[30px] font-normal uppercase tracking-[0.075em] leading-[36px] text-white md:text-[24px] md:font-semibold">
+                    {step.title}
+                  </h3>
+                  <p className="font-sans text-[24px] font-normal text-white md:text-[18px] md:text-gray-400">
+                    {step.description}
+                  </p>
+                </ScrollPop>
               </li>
             ))}
           </ul>
@@ -90,12 +95,16 @@ export function Services() {
       {/* PART 2: SERVICES HEADER */}
       <div className="bg-black pb-0 pt-0 md:pb-12 md:pt-12">
         <Container className="px-6 md:px-12">
-          <h2 className="mb-2 font-sans text-[52px] font-normal uppercase leading-[1.1] tracking-wide md:text-[80px]">
-            Services
-          </h2>
-          <p className="max-w-2xl font-sans text-[18px] font-normal text-gray-400 md:text-[18px]">
-            End-to-end motorcycle design and engineering — from first sketch to production line.
-          </p>
+          <ScrollPop>
+            <h2 className="mb-2 font-sans text-[52px] font-normal uppercase leading-[1.1] tracking-wide md:text-[80px]">
+              Services
+            </h2>
+          </ScrollPop>
+          <ScrollPop delay={100}>
+            <p className="max-w-2xl font-sans text-[18px] font-normal text-gray-400 md:text-[18px]">
+              End-to-end motorcycle design and engineering — from first sketch to production line.
+            </p>
+          </ScrollPop>
         </Container>
       </div>
 
@@ -147,10 +156,10 @@ function ServiceCard({ title, description, image, imageAlt, imageFirst, link }: 
       </p>
       {link ? (
         <a href={link}>
-          <Button icon={ArrowRightCircle}>Learn More</Button>
+          <Button variant="text" icon={ArrowRightCircle}>Learn More</Button>
         </a>
       ) : (
-        <Button icon={ArrowRightCircle}>Learn More</Button>
+        <Button variant="text" icon={ArrowRightCircle}>Learn More</Button>
       )}
     </div>
   );

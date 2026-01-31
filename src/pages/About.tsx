@@ -2,6 +2,7 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { Container } from '../components/Container';
 import { Button } from '../components/Button/Button';
+import { ScrollPop } from '../components/ScrollPop';
 
 // Placeholder for avatar image
 import avatarPlaceholder from '../assets/Gustavo_bn2.jpg';
@@ -37,41 +38,49 @@ export function About() {
               {/* Right: Bio content */}
               <div className="flex-1">
                 {/* Name */}
-                <h1 className="mb-4 font-sans text-[40px] font-normal leading-tight text-black md:text-[58px] md:leading-[70.7px]">
-                  Gustavo Pedro Higón Botet
-                </h1>
+                <ScrollPop>
+                  <h1 className="mb-4 font-sans text-[40px] font-normal leading-tight text-black md:text-[58px] md:leading-[70.7px]">
+                    Gustavo Pedro Higón Botet
+                  </h1>
+                </ScrollPop>
 
                 {/* Subtitle */}
-                <p className="mb-6 font-sans text-[20px] font-semibold leading-tight text-black md:text-[24px] md:leading-[29.26px]">
-                  Motorcycle design engineer, rider and enthusiast
-                </p>
+                <ScrollPop delay={100}>
+                  <p className="mb-6 font-sans text-[20px] font-semibold leading-tight text-black md:text-[24px] md:leading-[29.26px]">
+                    Motorcycle design engineer, rider and enthusiast
+                  </p>
+                </ScrollPop>
 
                 {/* Bullet points */}
-                <ul className="mb-6 space-y-2">
-                  <li className="font-sans text-[16px] font-normal text-black md:text-[18px]">
-                    • Born in 1984
-                  </li>
-                  <li className="font-sans text-[16px] font-normal text-black md:text-[18px]">
-                    • Based in Valencia
-                  </li>
-                  <li className="font-sans text-[16px] font-normal text-black md:text-[18px]">
-                    • Native Spanish and Catalan speaker, fluent in English
-                  </li>
-                </ul>
+                <ScrollPop delay={200}>
+                  <ul className="mb-6 space-y-2">
+                    <li className="font-sans text-[16px] font-normal text-black md:text-[18px]">
+                      • Born in 1984
+                    </li>
+                    <li className="font-sans text-[16px] font-normal text-black md:text-[18px]">
+                      • Based in Valencia
+                    </li>
+                    <li className="font-sans text-[16px] font-normal text-black md:text-[18px]">
+                      • Native Spanish and Catalan speaker, fluent in English
+                    </li>
+                  </ul>
+                </ScrollPop>
 
                 {/* Divider */}
                 <hr className="my-6 border-t border-black/20" />
 
                 {/* Paragraphs */}
-                <div className="space-y-4">
-                  <p className="font-sans text-[16px] font-normal leading-relaxed text-black md:text-[18px]">
-                    Degree in product design engineering by the Universitat Politècnica de València,
-                    specializing in Design for Leisure and Automotive.
-                  </p>
-                  <p className="font-sans text-[16px] font-normal leading-relaxed text-black md:text-[18px]">
-                    Honors in the final project, for the design of a high performance electric motorcycle.
-                  </p>
-                </div>
+                <ScrollPop delay={300}>
+                  <div className="space-y-4">
+                    <p className="font-sans text-[16px] font-normal leading-relaxed text-black md:text-[18px]">
+                      Degree in product design engineering by the Universitat Politècnica de València,
+                      specializing in Design for Leisure and Automotive.
+                    </p>
+                    <p className="font-sans text-[16px] font-normal leading-relaxed text-black md:text-[18px]">
+                      Honors in the final project, for the design of a high performance electric motorcycle.
+                    </p>
+                  </div>
+                </ScrollPop>
               </div>
             </div>
           </Container>
@@ -81,9 +90,11 @@ export function About() {
         <section className="w-full bg-black px-6 py-16 text-white md:px-12 md:py-24">
           <Container>
             {/* Section Title */}
-            <h2 className="mb-12 font-sans text-[40px] font-normal leading-tight md:mb-16 md:text-[58px] md:leading-[70.7px]">
-              Experience
-            </h2>
+            <ScrollPop>
+              <h2 className="mb-12 font-sans text-[40px] font-normal leading-tight md:mb-16 md:text-[58px] md:leading-[70.7px]">
+                Experience
+              </h2>
+            </ScrollPop>
 
             {/* Timeline */}
             <div className="space-y-8">
@@ -140,7 +151,7 @@ export function About() {
                 </div>
                 <div className="flex-1">
                   <h3 className="mb-2 font-sans text-[24px] font-normal leading-tight text-white md:text-[30px] md:leading-[36px]">
-                    Head of product and desig
+                    Head of product and design
                   </h3>
                   <p className="font-sans text-[16px] font-normal text-white/80 md:text-[18px]">
                     BTWICE

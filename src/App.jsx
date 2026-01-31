@@ -4,10 +4,12 @@ import { Portfolio } from './pages/Portfolio';
 import { ProjectDetail } from './pages/ProjectDetail';
 import { ConceptSketching, VirtualClayClassA, Engineering } from './pages/services';
 import { About } from './pages/About';
+import { ScrollToTop } from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />

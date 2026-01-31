@@ -2,6 +2,7 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { Container } from '../../components/Container';
 import { ProjectCard } from '../../components/SelectedWork/ProjectCard';
+import { ScrollPop } from '../../components/ScrollPop';
 import { projects as projectsData } from '../../data/projects';
 
 /* ------------------------------------------------------------------ */
@@ -47,14 +48,18 @@ export function Portfolio() {
           <Container className="px-6 md:px-12">
             <div className="flex flex-col gap-8">
               {/* Main Title */}
-              <h1 className="font-sans text-[40px] font-normal leading-tight md:text-[65px]">
-                PORTFOLIO
-              </h1>
+              <ScrollPop>
+                <h1 className="font-sans text-[40px] font-normal leading-tight md:text-[65px]">
+                  PORTFOLIO
+                </h1>
+              </ScrollPop>
 
               {/* Subtitle */}
-              <p className="max-w-3xl font-sans text-[24px] font-semibold leading-normal text-white/90">
-                Selected projects spanning concept design, engineering, and production.
-              </p>
+              <ScrollPop delay={100}>
+                <p className="max-w-3xl font-sans text-[24px] font-semibold leading-normal text-white/90">
+                  Selected projects spanning concept design, engineering, and production.
+                </p>
+              </ScrollPop>
             </div>
           </Container>
         </section>

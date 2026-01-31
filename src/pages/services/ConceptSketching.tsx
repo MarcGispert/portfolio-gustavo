@@ -2,6 +2,7 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { Container } from '../../components/Container';
 import { Button } from '../../components/Button/Button';
+import { ScrollPop } from '../../components/ScrollPop';
 import { ArrowRightCircle, Pencil, Brush, PenTool, Sparkles, LayoutDashboard } from 'lucide-react';
 
 // Placeholder images - using existing assets
@@ -183,9 +184,11 @@ export function ConceptSketching() {
         <section className="w-full bg-black px-6 py-16 text-white md:px-12 md:py-24">
           <Container>
             {/* Section Title */}
-            <h2 className="mb-12 text-center font-sans text-[40px] font-normal leading-tight md:mb-16 md:text-[58px] md:leading-[70.7px]">
-              Key capabilities
-            </h2>
+            <ScrollPop>
+              <h2 className="mb-12 text-center font-sans text-[40px] font-normal leading-tight md:mb-16 md:text-[58px] md:leading-[70.7px]">
+                Key capabilities
+              </h2>
+            </ScrollPop>
 
             {/* Capabilities Grid */}
             <div className="grid grid-cols-1 gap-8 md:grid-cols-5 md:gap-6">
@@ -219,9 +222,11 @@ export function ConceptSketching() {
           {/* Section Title */}
           <div className="mb-12 px-6 md:px-12">
             <Container>
-              <h2 className="font-sans text-[40px] font-normal leading-tight text-black md:text-[58px] md:leading-[70.7px]">
-                Selected Concept & Sketching Projects
-              </h2>
+              <ScrollPop>
+                <h2 className="font-sans text-[40px] font-normal leading-tight text-black md:text-[58px] md:leading-[70.7px]">
+                  Selected Concept & Sketching Projects
+                </h2>
+              </ScrollPop>
             </Container>
           </div>
 
@@ -284,7 +289,7 @@ function ProjectEntry({ title, tags, description, image, imageFirst }: ProjectEn
         </p>
 
         {/* CTA Button */}
-        <Button icon={ArrowRightCircle}>Learn more</Button>
+        <Button variant="text" icon={ArrowRightCircle}>Learn more</Button>
       </div>
     </div>
   );

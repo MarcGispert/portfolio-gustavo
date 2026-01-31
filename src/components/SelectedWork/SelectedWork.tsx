@@ -1,6 +1,7 @@
 import { Container } from '../Container';
 import { ProjectCard } from './ProjectCard';
 import { Button } from '../Button/Button';
+import { ScrollPop } from '../ScrollPop';
 import { ArrowRightCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -61,12 +62,16 @@ export function SelectedWork() {
       {/* Header */}
       <div className="px-6 py-12 md:px-12 md:py-24">
         <Container className="!px-0">
-          <h2 className="mb-0 font-sans text-[52px] font-normal uppercase leading-[1.1] tracking-wide md:mb-4 md:text-[80px]">
-            Selected Work
-          </h2>
-          <p className="hidden max-w-2xl font-sans text-[18px] font-normal text-gray-400 md:block md:text-[18px]">
-            A curated selection of motorcycle design projects showcasing innovation and craftsmanship.
-          </p>
+          <ScrollPop>
+            <h2 className="mb-0 font-sans text-[52px] font-normal uppercase leading-[1.1] tracking-wide md:mb-4 md:text-[80px]">
+              Selected Work
+            </h2>
+          </ScrollPop>
+          <ScrollPop delay={100}>
+            <p className="hidden max-w-2xl font-sans text-[18px] font-normal text-gray-400 md:block md:text-[18px]">
+              A curated selection of motorcycle design projects showcasing innovation and craftsmanship.
+            </p>
+          </ScrollPop>
         </Container>
       </div>
 
@@ -93,7 +98,7 @@ export function SelectedWork() {
         <Container className="!px-0">
           <div className="flex justify-center">
             <Link to="/portfolio">
-              <Button icon={ArrowRightCircle}>
+              <Button variant="text" icon={ArrowRightCircle}>
                 VIEW ALL PROJECTS
               </Button>
             </Link>

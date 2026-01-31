@@ -2,6 +2,7 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { Container } from '../../components/Container';
 import { Button } from '../../components/Button/Button';
+import { ScrollPop } from '../../components/ScrollPop';
 import { Box, Camera, View, PenTool } from 'lucide-react';
 
 import heroImg from '../../assets/hero-bike.jpg';
@@ -107,9 +108,11 @@ export function VirtualClayClassA() {
         {/* Key Capabilities */}
         <section className="w-full bg-black px-6 py-16 text-white md:px-12 md:py-24">
           <Container>
-            <h2 className="mb-12 text-center font-sans text-[40px] font-normal leading-tight md:mb-16 md:text-[58px] md:leading-[70.7px]">
-              Key capabilities
-            </h2>
+            <ScrollPop>
+              <h2 className="mb-12 text-center font-sans text-[40px] font-normal leading-tight md:mb-16 md:text-[58px] md:leading-[70.7px]">
+                Key capabilities
+              </h2>
+            </ScrollPop>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-6">
               {capabilities.map((capability) => {
                 const Icon = capability.icon;
@@ -135,9 +138,11 @@ export function VirtualClayClassA() {
         <section className="w-full bg-white py-16 md:py-24">
           <div className="mb-12 px-6 md:px-12">
             <Container>
-              <h2 className="font-sans text-[40px] font-normal leading-tight text-black md:text-[58px] md:leading-[70.7px]">
-                Selected Virtual Clay & Class A Surfacing Projects
-              </h2>
+              <ScrollPop>
+                <h2 className="font-sans text-[40px] font-normal leading-tight text-black md:text-[58px] md:leading-[70.7px]">
+                  Selected Virtual Clay & Class A Surfacing Projects
+                </h2>
+              </ScrollPop>
             </Container>
           </div>
 
