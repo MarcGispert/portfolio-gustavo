@@ -4,12 +4,12 @@ import { Container } from '../components/Container';
 import { Button } from '../components/Button/Button';
 
 // Placeholder for avatar image
-import avatarPlaceholder from '../assets/hero-bike.jpg';
+import avatarPlaceholder from '../assets/Gustavo_bn2.jpg';
 
 // Placeholder for company logos
 const logos = {
   ossa: '/logo-header.svg', // TODO: Replace with actual OSSA logo from Figma
-  gasgas: '/logo-header.svg', // TODO: Replace with actual GAS GAS logo from Figma
+  gasgas: '/gasgas-logo.svg', // TODO: Replace with actual GAS GAS logo from Figma
   btwice: '/logo-header.svg', // TODO: Replace with actual BTWICE logo from Figma
 };
 
@@ -82,7 +82,7 @@ export function About() {
           <Container>
             {/* Section Title */}
             <h2 className="mb-12 font-sans text-[40px] font-normal leading-tight md:mb-16 md:text-[58px] md:leading-[70.7px]">
-              Key capabilities
+              Experience
             </h2>
 
             {/* Timeline */}

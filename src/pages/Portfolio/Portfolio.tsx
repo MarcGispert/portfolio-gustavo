@@ -4,12 +4,6 @@ import { Container } from '../../components/Container';
 import { ProjectCard } from '../../components/SelectedWork/ProjectCard';
 import { projects as projectsData } from '../../data/projects';
 
-// Placeholder images - using existing assets
-import heroImg from '../../assets/hero-bike.jpg';
-import conceptImg from '../../assets/Concept-Sketching.png';
-import engineeringImg from '../../assets/Engineering.png';
-import virtualClayImg from '../../assets/virtual-clay .png';
-
 /* ------------------------------------------------------------------ */
 /*  Grid Layout Configuration                                         */
 /* ------------------------------------------------------------------ */
@@ -27,13 +21,11 @@ const gridLayout = [
   { slug: 'alpha-boar', desktopGridClass: 'col-span-1', hideOnMobile: true },
 ];
 
-const placeholderImages = [heroImg, conceptImg, engineeringImg, virtualClayImg];
-
-const projects = projectsData.map((project, index) => {
+const projects = projectsData.map((project) => {
   const layout = gridLayout.find(l => l.slug === project.slug) || { desktopGridClass: 'col-span-1', hideOnMobile: false };
   return {
     ...project,
-    image: placeholderImages[index % placeholderImages.length],
+    image: project.galleryImages?.[0] || project.heroImage,
     category: project.tags[0],
     ...layout,
   };
@@ -52,7 +44,7 @@ export function Portfolio() {
       <main className="pt-20">
         {/* Title Section */}
         <section className="py-24 text-white md:py-24">
-          <Container>
+          <Container className="px-6 md:px-12">
             <div className="flex flex-col gap-8">
               {/* Main Title */}
               <h1 className="font-sans text-[40px] font-normal leading-tight md:text-[65px]">

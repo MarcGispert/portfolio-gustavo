@@ -2,6 +2,7 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { Container } from '../../components/Container';
 import { Button } from '../../components/Button/Button';
+import { Box, Camera, View, PenTool } from 'lucide-react';
 
 import heroImg from '../../assets/hero-bike.jpg';
 import virtualClayImg from '../../assets/virtual-clay .png';
@@ -12,18 +13,22 @@ const capabilities = [
   {
     title: 'Virtual clay models',
     description: 'Early ideation and fast visual exploration',
+    icon: Box,
   },
   {
     title: 'Rendering',
     description: '(still and 360º videos)',
+    icon: Camera,
   },
   {
     title: 'Virtual reality',
     description: 'Models for review using VR headsets',
+    icon: View,
   },
   {
     title: 'Class A surfacing',
     description: 'Ready for engineering',
+    icon: PenTool,
   },
 ];
 
@@ -106,21 +111,22 @@ export function VirtualClayClassA() {
               Key capabilities
             </h2>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-6">
-              {capabilities.map((capability) => (
-                <div key={capability.title} className="flex flex-col">
-                  <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white/10">
-                    <svg className="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                    </svg>
+              {capabilities.map((capability) => {
+                const Icon = capability.icon;
+                return (
+                  <div key={capability.title} className="flex flex-col items-center md:items-start">
+                    <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white/10">
+                      <Icon className="h-12 w-12 text-white" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="mb-2 text-center font-sans text-[20px] font-semibold text-white md:text-left md:text-[24px]">
+                      {capability.title}
+                    </h3>
+                    <p className="text-center font-sans text-[16px] font-normal leading-relaxed text-white/90 md:text-left md:text-[18px]">
+                      {capability.description}
+                    </p>
                   </div>
-                  <h3 className="mb-2 font-sans text-[20px] font-semibold text-white md:text-[24px]">
-                    {capability.title}
-                  </h3>
-                  <p className="font-sans text-[16px] font-normal leading-relaxed text-white/90 md:text-[18px]">
-                    {capability.description}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </Container>
         </section>

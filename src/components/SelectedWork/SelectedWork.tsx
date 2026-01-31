@@ -1,12 +1,8 @@
 import { Container } from '../Container';
 import { ProjectCard } from './ProjectCard';
 import { Button } from '../Button/Button';
-
-// Placeholder images - replace with actual project images
-import heroImg from '../../assets/hero-bike.jpg';
-import conceptImg from '../../assets/Concept-Sketching.png';
-import engineeringImg from '../../assets/Engineering.png';
-import virtualClayImg from '../../assets/virtual-clay .png';
+import { ArrowRightCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -15,42 +11,42 @@ import virtualClayImg from '../../assets/virtual-clay .png';
 const projects = [
   {
     id: 1,
-    title: 'Sport Naked 450',
-    category: 'Industrial Design',
-    image: heroImg,
-    link: '#',
+    title: 'GAS GAS',
+    category: 'Featured',
+    image: '/images/projects/gas-gas/gas-gas04.jpg',
+    link: '/project/gas-gas',
     gridClass: 'md:row-span-2', // Large card - left side
   },
   {
     id: 2,
-    title: 'Cafe Racer 750',
-    category: 'Concept Design',
-    image: conceptImg,
-    link: '#',
+    title: 'ITALJET',
+    category: 'Featured',
+    image: '/images/projects/italjet/02.jpg',
+    link: '/project/italjet',
     gridClass: '', // Regular card - top right
   },
   {
     id: 3,
-    title: 'Enduro 650',
-    category: 'Engineering',
-    image: engineeringImg,
-    link: '#',
+    title: 'OSSA',
+    category: 'Featured',
+    image: '/images/projects/ossa/01.jpg',
+    link: '/project/ossa',
     gridClass: '', // Regular card - top right
   },
   {
     id: 4,
-    title: 'Urban Commuter',
-    category: 'Electric Mobility',
-    image: virtualClayImg,
-    link: '#',
+    title: 'GAVARES',
+    category: 'Featured',
+    image: '/images/projects/gavares/03.jpg',
+    link: '/project/gavares',
     gridClass: '', // Regular card - bottom right
   },
   {
     id: 5,
-    title: 'Racing Prototype',
-    category: 'Performance',
-    image: conceptImg,
-    link: '#',
+    title: 'E-RACER',
+    category: 'Featured',
+    image: '/images/projects/e-racer-rugged/02.jpg',
+    link: '/project/e-racer-rugged',
     gridClass: '', // Regular card - bottom right
   },
 ];
@@ -63,7 +59,7 @@ export function SelectedWork() {
   return (
     <section className="w-full bg-black text-white">
       {/* Header */}
-      <div className="p-12 md:py-24">
+      <div className="px-6 py-12 md:px-12 md:py-24">
         <Container className="!px-0">
           <h2 className="mb-0 font-sans text-[52px] font-normal uppercase leading-[1.1] tracking-wide md:mb-4 md:text-[80px]">
             Selected Work
@@ -93,12 +89,14 @@ export function SelectedWork() {
       </div>
 
       {/* View All Projects Button */}
-      <div className="p-12 md:py-24">
+      <div className="px-6 py-12 md:px-12 md:py-24">
         <Container className="!px-0">
           <div className="flex justify-center">
-            <Button variant="outline" size="large">
-              VIEW ALL PROJECTS
-            </Button>
+            <Link to="/portfolio">
+              <Button icon={ArrowRightCircle}>
+                VIEW ALL PROJECTS
+              </Button>
+            </Link>
           </div>
         </Container>
       </div>

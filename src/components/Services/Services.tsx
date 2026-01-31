@@ -1,5 +1,6 @@
 import { Container } from '../Container';
 import { Button } from '../Button/Button';
+import { ArrowRightCircle } from 'lucide-react';
 
 import conceptSketchingImg from '../../assets/Concept-Sketching.png';
 import virtualClayImg from '../../assets/virtual-clay .png';
@@ -65,9 +66,9 @@ export function Services() {
   return (
     <section className="w-full bg-black text-white">
       {/* PART 1: HOW I HELP INTRO */}
-      <div className="bg-black py-24 md:py-24">
-        <Container>
-          <h2 className="mb-16 max-w-[600px] font-sans text-[36px] font-semibold uppercase leading-[1.1] tracking-wide md:mb-16 md:text-[80px] md:font-normal">
+      <div className="bg-black py-24 md:pt-24 md:pb-12">
+        <Container className="px-6 md:px-12">
+          <h2 className="mb-16 font-sans text-[36px] font-semibold uppercase leading-[1.1] tracking-wide md:mb-16 md:text-[80px] md:font-normal">
             How I Help Motorcycle Brands Bring Products to Life
           </h2>
 
@@ -87,8 +88,8 @@ export function Services() {
       </div>
 
       {/* PART 2: SERVICES HEADER */}
-      <div className="bg-black pb-0 pt-0 md:pb-12 md:pt-24">
-        <Container>
+      <div className="bg-black pb-0 pt-0 md:pb-12 md:pt-12">
+        <Container className="px-6 md:px-12">
           <h2 className="mb-2 font-sans text-[52px] font-normal uppercase leading-[1.1] tracking-wide md:text-[80px]">
             Services
           </h2>
@@ -100,7 +101,7 @@ export function Services() {
 
       {/* PART 3: SERVICES GRID (CHECKERBOARD) */}
       <div className="pb-16 md:pb-24">
-        <Container>
+        <Container className="px-6 md:px-12">
           <div className="grid grid-cols-1 gap-0 md:grid-cols-2">
             {serviceCards.map((card) => (
               <ServiceCard key={card.id} {...card} />
@@ -144,15 +145,13 @@ function ServiceCard({ title, description, image, imageAlt, imageFirst, link }: 
       <p className="mb-8 max-w-md font-sans text-[18px] font-normal leading-[1.6] text-gray-400 md:text-[18px]">
         {description}
       </p>
-      <div>
-        {link ? (
-          <a href={link}>
-            <Button variant="outline">Learn More</Button>
-          </a>
-        ) : (
-          <Button variant="outline">Learn More</Button>
-        )}
-      </div>
+      {link ? (
+        <a href={link}>
+          <Button icon={ArrowRightCircle}>Learn More</Button>
+        </a>
+      ) : (
+        <Button icon={ArrowRightCircle}>Learn More</Button>
+      )}
     </div>
   );
 

@@ -6,13 +6,13 @@ interface ContainerProps {
 }
 
 /**
- * Container component with standardized max-width and padding
+ * Container component with standardized max-width
  * Max width: 1440px
- * Horizontal padding: 48px (both mobile and desktop)
+ * Horizontal padding: 0px (parent sections handle padding)
  */
 export function Container({ children, className = '' }: ContainerProps) {
   return (
-    <div className={`mx-auto w-full max-w-[1440px] px-12 ${className}`}>
+    <div className={`mx-auto w-full max-w-[1440px] px-0 ${className}`}>
       {children}
     </div>
   );

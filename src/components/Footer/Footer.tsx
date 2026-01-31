@@ -25,7 +25,7 @@ const legalLinks = [
 export function Footer() {
   return (
     <footer className="w-full bg-black py-16 text-white md:py-16">
-      <Container>
+      <Container className="px-6 md:px-12">
         <div className="flex flex-col gap-12">
 
           {/* ============= UPPER SECTION ============= */}

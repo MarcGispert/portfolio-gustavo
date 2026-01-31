@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 interface ProjectCardProps {
   title: string;
   category: string;
@@ -7,8 +9,8 @@ interface ProjectCardProps {
 
 export function ProjectCard({ title, category, image, link }: ProjectCardProps) {
   return (
-    <a
-      href={link}
+    <Link
+      to={link}
       className="group relative block h-full w-full overflow-hidden"
     >
       {/* Image */}
@@ -27,6 +29,6 @@ export function ProjectCard({ title, category, image, link }: ProjectCardProps) 
           {title}
         </h3>
       </div>
-    </a>
+    </Link>
   );
 }

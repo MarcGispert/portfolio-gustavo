@@ -8,7 +8,7 @@ import heroBike from '../../assets/hero-bike.jpg';
 export function Hero() {
   return (
     <section className="w-full bg-white py-24 md:py-24">
-      <Container>
+      <Container className="px-6 md:px-12">
         <div className="flex flex-col items-center text-center">
           {/* Top branding text */}
           <div className="mb-4 md:mb-4">

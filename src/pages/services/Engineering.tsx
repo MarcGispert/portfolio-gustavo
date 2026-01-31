@@ -2,6 +2,7 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { Container } from '../../components/Container';
 import { Button } from '../../components/Button/Button';
+import { ArrowRightCircle, Layers, Scan, GitFork, Package, Activity, CircleDot } from 'lucide-react';
 
 import heroImg from '../../assets/hero-bike.jpg';
 import engineeringImg from '../../assets/Engineering.png';
@@ -12,26 +13,32 @@ const capabilities = [
   {
     title: 'Plastics R&D',
     description: 'A- and B-side plastics development ready for injection moulding.',
+    icon: Layers,
   },
   {
     title: 'Frame Design & FEM',
     description: 'Frame design with FEM optimization and structural validation.',
+    icon: Scan,
   },
   {
     title: 'Swingarm Design',
     description: 'Off-road and on-road swingarms, single or double-sided, with advanced tensioning systems.',
+    icon: GitFork,
   },
   {
     title: 'Seats & Fuel Systems',
     description: 'Seats, fuel tanks and accessory parts designed for real manufacturing.',
+    icon: Package,
   },
   {
     title: 'Suspension Components',
     description: 'Fork clamps and suspension linkages with kinematic and progression optimization.',
+    icon: Activity,
   },
   {
     title: 'Rim Design',
     description: 'Scooter rim design for casting, with or without sand cores.',
+    icon: CircleDot,
   },
 ];
 
@@ -122,22 +129,22 @@ export function Engineering() {
               Key capabilities
             </h2>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-6">
-              {capabilities.map((capability) => (
-                <div key={capability.title} className="flex flex-col">
-                  <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white/10">
-                    <svg className="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
+              {capabilities.map((capability) => {
+                const Icon = capability.icon;
+                return (
+                  <div key={capability.title} className="flex flex-col items-center md:items-start">
+                    <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white/10">
+                      <Icon className="h-12 w-12 text-white" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="mb-2 text-center font-sans text-[20px] font-semibold text-white md:text-left md:text-[24px]">
+                      {capability.title}
+                    </h3>
+                    <p className="text-center font-sans text-[16px] font-normal leading-relaxed text-white/90 md:text-left md:text-[18px]">
+                      {capability.description}
+                    </p>
                   </div>
-                  <h3 className="mb-2 font-sans text-[20px] font-semibold text-white md:text-[24px]">
-                    {capability.title}
-                  </h3>
-                  <p className="font-sans text-[16px] font-normal leading-relaxed text-white/90 md:text-[18px]">
-                    {capability.description}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </Container>
         </section>
@@ -181,7 +188,7 @@ function ProjectEntry({ title, tags, description, image, imageFirst }: ProjectEn
   );
 
   const textBlock = (
-    <div className="flex w-full items-center justify-center bg-white p-8 md:w-1/2 md:p-16">
+    <div className="flex w-full items-center justify-start bg-white p-8 md:w-1/2 md:p-16">
       <div className="max-w-[592px]">
         <div className="mb-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
@@ -199,7 +206,7 @@ function ProjectEntry({ title, tags, description, image, imageFirst }: ProjectEn
         <p className="mb-6 font-sans text-[16px] font-normal leading-relaxed text-black md:text-[18px] md:leading-[21.94px]">
           {description}
         </p>
-        <Button variant="outline">Learn more</Button>
+        <Button icon={ArrowRightCircle}>Learn more</Button>
       </div>
     </div>
   );

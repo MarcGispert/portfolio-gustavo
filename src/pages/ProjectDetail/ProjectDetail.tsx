@@ -38,9 +38,10 @@ export function ProjectDetail() {
   }
 
   const placeholderImages = [heroImg, conceptImg, engineeringImg, virtualClayImg];
-  const heroImage = placeholderImages[0];
-  const mainImage = placeholderImages[1];
-  const galleryImages = [placeholderImages[2], placeholderImages[3]];
+  const heroImage = project.heroImage || placeholderImages[0];
+  const gallery = project.galleryImages || [placeholderImages[1], placeholderImages[2], placeholderImages[3]];
+  const mainImage = gallery[0];
+  const galleryImages = [gallery[1], gallery[2]];
   const paragraphs = project.description.split('\n').filter(p => p.trim());
   return (
     <div className="min-h-screen bg-white">
@@ -63,7 +64,7 @@ export function ProjectDetail() {
           />
 
           {/* Hero Text - Positioned at bottom */}
-          <div className="absolute inset-0 flex flex-col justify-end p-12">
+          <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-12">
             <div className="mx-auto w-full max-w-[1440px]">
               <h1 className="mb-[10px] font-sans text-[65px] font-normal leading-[79.235px] text-white">
                 {project.title}
@@ -77,7 +78,7 @@ export function ProjectDetail() {
 
         {/* Back Link */}
         <section className="w-full bg-white py-12">
-          <Container>
+          <Container className="px-6 md:px-12">
             <Link
               to="/portfolio"
               className="inline-flex items-center gap-3 font-sans text-[18px] font-normal leading-[21.942px] text-[#0A0A0A] transition-colors hover:text-gray-600"
@@ -105,7 +106,7 @@ export function ProjectDetail() {
 
         {/* Content Section - 2 columns on Desktop, stacked on Mobile */}
         <section className="w-full bg-white pb-12">
-          <Container>
+          <Container className="px-6 md:px-12">
             <div className="flex flex-col gap-0 md:flex-row md:gap-12">
               {/* LEFT COLUMN - Image Gallery (Desktop) / Stacked Images (Mobile) */}
               <div className="flex w-full flex-col gap-12 md:w-[762px] md:gap-[10px] md:pr-0">
