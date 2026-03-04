@@ -11,21 +11,6 @@ import engineeringImg from '../../assets/Engineering.png';
 /*  Data                                                               */
 /* ------------------------------------------------------------------ */
 
-const processSteps = [
-  {
-    title: 'From Idea to Concept',
-    description: 'Early design, sketching, and product definition',
-  },
-  {
-    title: 'From Concept to Production-Ready Design',
-    description: 'Virtual clay, Class A surfacing, and visual validation',
-  },
-  {
-    title: 'Engineering for Real Manufacturing',
-    description: 'Frames, plastics, components, and industrialization',
-  },
-];
-
 const serviceCards = [
   {
     id: 'concept-sketching',
@@ -66,34 +51,8 @@ const serviceCards = [
 export function Services() {
   return (
     <section className="w-full bg-black text-white">
-      {/* PART 1: HOW I HELP INTRO */}
-      <div className="bg-black py-24 md:pt-24 md:pb-12">
-        <Container className="px-6 md:px-12">
-          <ScrollPop>
-            <h2 className="mb-16 font-sans text-[36px] font-semibold uppercase leading-[1.1] tracking-wide md:mb-16 md:text-[80px] md:font-normal">
-              How I Help Motorcycle Brands Bring Products to Life
-            </h2>
-          </ScrollPop>
-
-          <ul className="divide-y divide-white/20">
-            {processSteps.map((step, index) => (
-              <li key={step.title} className={index === 0 ? 'pb-8 md:pb-8' : 'py-8 md:py-8'}>
-                <ScrollPop delay={index * 100}>
-                  <h3 className="mb-4 font-sans text-[30px] font-normal uppercase tracking-[0.075em] leading-[36px] text-white md:text-[24px] md:font-semibold">
-                    {step.title}
-                  </h3>
-                  <p className="font-sans text-[24px] font-normal text-white md:text-[18px] md:text-gray-400">
-                    {step.description}
-                  </p>
-                </ScrollPop>
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </div>
-
-      {/* PART 2: SERVICES HEADER */}
-      <div className="bg-black pb-0 pt-0 md:pb-12 md:pt-12">
+      {/* SERVICES HEADER */}
+      <div className="bg-black pb-0 pt-12 md:pb-12 md:pt-24">
         <Container className="px-6 md:px-12">
           <ScrollPop>
             <h2 className="mb-2 font-sans text-[52px] font-normal uppercase leading-[1.1] tracking-wide md:text-[80px]">
@@ -147,7 +106,7 @@ function ServiceCard({ title, description, image, imageAlt, imageFirst, link }: 
   );
 
   const textBlock = (
-    <div className="flex flex-col justify-center bg-black p-12 md:p-12 lg:p-16">
+    <div className="flex flex-col justify-center bg-black p-12 pt-12 md:p-12 lg:p-16">
       <h3 className="mb-6 whitespace-pre-line font-sans text-[30px] font-normal uppercase leading-[1.2] tracking-wide md:text-[58px]">
         {title}
       </h3>

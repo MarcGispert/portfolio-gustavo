@@ -3,13 +3,18 @@ import { Footer } from '../../components/Footer';
 import { Container } from '../../components/Container';
 import { Button } from '../../components/Button/Button';
 import { ScrollPop } from '../../components/ScrollPop';
-import { ArrowRightCircle, Pencil, Brush, PenTool, Sparkles, LayoutDashboard } from 'lucide-react';
+import { ArrowRightCircle } from 'lucide-react';
 
 // Placeholder images - using existing assets
 import heroImg from '../../assets/hero-bike.jpg';
 import conceptImg from '../../assets/Concept-Sketching.png';
 import engineeringImg from '../../assets/Engineering.png';
 import virtualClayImg from '../../assets/virtual-clay .png';
+import paperSketchingImg from '../../assets/paper-sketching.jpg';
+import rasterImg from '../../assets/2d-raster.jpg';
+import vectorImg from '../../assets/2d-vector.jpg';
+import aiEnhancingImg from '../../assets/ai-enhancing.png';
+import graphicsImg from '../../assets/graphics-interfaces.jpg';
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                              */
@@ -17,103 +22,38 @@ import virtualClayImg from '../../assets/virtual-clay .png';
 
 const capabilities = [
   {
+    id: 1,
     title: 'Paper Sketching',
     description: 'Early ideation and fast visual exploration',
-    icon: Pencil,
-  },
-  {
-    title: '2D Raster',
-    description: 'Photoshop and Wacom-based workflows',
-    icon: Brush,
-  },
-  {
-    title: '2D Vector',
-    description: 'Clean and precise concept definition',
-    icon: PenTool,
-  },
-  {
-    title: 'AI Enhancing',
-    description: 'Fast iterations and visual refinement',
-    icon: Sparkles,
-  },
-  {
-    title: 'Graphics & Interfaces',
-    description: 'Dashboards, UI and product graphics',
-    icon: LayoutDashboard,
-  },
-];
-
-const projects = [
-  {
-    id: 1,
-    title: 'MOTT Concept',
-    tags: ['Vector Sketching', 'Concept Design'],
-    description: 'Complete visual development from initial sketches to final concept presentation.',
-    image: conceptImg,
+    image: paperSketchingImg,
     imageFirst: true,
   },
   {
     id: 2,
-    title: 'BMW R1250R',
-    tags: ['Wacom Sketching', '2D Raster'],
-    description: 'Early-stage concept exploration and visual development for premium motorcycle line.',
-    image: engineeringImg,
+    title: '2D Raster',
+    description: 'Photoshop and Wacom-based workflows',
+    image: rasterImg,
     imageFirst: false,
   },
   {
     id: 3,
-    title: 'Swift Concept',
-    tags: ['Vector Sketching', 'AI Enhancing'],
-    description: 'Rapid concept development with modern digital tools and AI-assisted refinement.',
-    image: virtualClayImg,
+    title: '2D Vector',
+    description: 'Clean and precise concept definition',
+    image: vectorImg,
     imageFirst: true,
   },
   {
     id: 4,
-    title: 'Urban Commuter',
-    tags: ['Paper Sketching', 'Vector'],
-    description: 'From napkin sketch to production-ready concept in record time.',
-    image: heroImg,
+    title: 'AI Enhancing',
+    description: 'Fast iterations and visual refinement',
+    image: aiEnhancingImg,
     imageFirst: false,
   },
   {
     id: 5,
-    title: 'Adventure 850',
-    tags: ['Concept Design', '2D Vector'],
-    description: 'Complete brand identity and visual language development.',
-    image: conceptImg,
-    imageFirst: true,
-  },
-  {
-    id: 6,
-    title: 'Electric Racer',
-    tags: ['AI Enhancing', 'Graphics'],
-    description: 'Next-generation electric motorcycle with cutting-edge visual design.',
-    image: engineeringImg,
-    imageFirst: false,
-  },
-  {
-    id: 7,
-    title: 'Classic Revival',
-    tags: ['Paper Sketching', '2D Raster'],
-    description: 'Modern interpretation of classic motorcycle design language.',
-    image: virtualClayImg,
-    imageFirst: true,
-  },
-  {
-    id: 8,
-    title: 'Sport Naked',
-    tags: ['Vector Sketching', 'Graphics'],
-    description: 'Aggressive styling and aerodynamic form development.',
-    image: heroImg,
-    imageFirst: false,
-  },
-  {
-    id: 9,
-    title: 'Touring Concept',
-    tags: ['Concept Design', 'AI Enhancing'],
-    description: 'Long-distance comfort meets contemporary design aesthetics.',
-    image: conceptImg,
+    title: 'Graphics & Interfaces',
+    description: 'Dashboards, UI and product graphics',
+    image: graphicsImg,
     imageFirst: true,
   },
 ];
@@ -132,7 +72,7 @@ export function ConceptSketching() {
         {/* Hero Section - Full width with image + gradient overlay */}
         <section
           className="relative h-[500px] w-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImg})` }}
+          style={{ backgroundImage: `url(${conceptImg})` }}
         >
           {/* Gradient Overlay: bottom 80% -> middle 40% -> top 0% black */}
           <div
@@ -156,84 +96,33 @@ export function ConceptSketching() {
           </div>
         </section>
 
-        {/* Intro Split Block */}
-        <section className="w-full bg-[#656567] px-6 py-16 md:px-12 md:py-24">
+        {/* Intro Text Block */}
+        <section className="w-full bg-white px-6 py-12 md:px-12 md:py-24">
           <Container>
-            <div className="flex flex-col items-center gap-8 md:flex-row md:gap-12">
-              {/* Image */}
-              <div className="w-full md:w-1/2">
-                <img
-                  src={conceptImg}
-                  alt="Concept sketching process"
-                  className="h-auto w-full object-cover md:h-[368px]"
-                />
-              </div>
-
-              {/* Text */}
-              <div className="w-full md:w-1/2">
-                <p className="font-sans text-[24px] font-normal leading-[1.2] tracking-[0.063em] text-white md:text-[30px] md:leading-[36px] md:tracking-[1.9px]">
-                  Large experience in early product definition and concept development, helping brands
-                  transform ideas into clear, feasible and distinctive motorcycle concepts.
-                </p>
-              </div>
-            </div>
+            <p className="max-w-4xl font-sans text-[24px] font-normal leading-[1.2] tracking-[0.063em] text-black md:text-[30px] md:leading-[36px] md:tracking-[1.9px]">
+              Large experience in early product definition and concept development, helping brands
+              transform ideas into clear, feasible and distinctive motorcycle concepts.
+            </p>
           </Container>
         </section>
 
-        {/* Key Capabilities Band */}
-        <section className="w-full bg-black px-6 py-16 text-white md:px-12 md:py-24">
-          <Container>
-            {/* Section Title */}
-            <ScrollPop>
-              <h2 className="mb-12 text-center font-sans text-[40px] font-normal leading-tight md:mb-16 md:text-[58px] md:leading-[70.7px]">
-                Key capabilities
-              </h2>
-            </ScrollPop>
-
-            {/* Capabilities Grid */}
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-5 md:gap-6">
-              {capabilities.map((capability) => {
-                const Icon = capability.icon;
-                return (
-                  <div key={capability.title} className="flex flex-col items-center md:items-start">
-                    {/* Icon */}
-                    <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white/10">
-                      <Icon className="h-12 w-12 text-white" strokeWidth={1.5} />
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="mb-2 text-center font-sans text-[20px] font-semibold text-white md:text-left md:text-[24px]">
-                      {capability.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-center font-sans text-[16px] font-normal leading-relaxed text-white/90 md:text-left md:text-[18px]">
-                      {capability.description}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </Container>
-        </section>
-
-        {/* Projects Section */}
+        {/* Capabilities Section */}
         <section className="w-full bg-white py-16 md:py-24">
           {/* Section Title */}
           <div className="mb-12 px-6 md:px-12">
             <Container>
               <ScrollPop>
                 <h2 className="font-sans text-[40px] font-normal leading-tight text-black md:text-[58px] md:leading-[70.7px]">
-                  Selected Concept & Sketching Projects
+                  Key Capabilities
                 </h2>
               </ScrollPop>
             </Container>
           </div>
 
-          {/* Projects List - No Container, full-bleed */}
+          {/* Capabilities List - No Container, full-bleed */}
           <div className="mx-auto w-full max-w-[1440px]">
-            {projects.map((project) => (
-              <ProjectEntry key={project.id} {...project} />
+            {capabilities.map((capability) => (
+              <CapabilityEntry key={capability.id} {...capability} />
             ))}
           </div>
         </section>
@@ -245,39 +134,28 @@ export function ConceptSketching() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Project Entry Component                                           */
+/*  Capability Entry Component                                        */
 /* ------------------------------------------------------------------ */
 
-interface ProjectEntryProps {
+interface CapabilityEntryProps {
   title: string;
-  tags: string[];
   description: string;
   image: string;
   imageFirst: boolean;
 }
 
-function ProjectEntry({ title, tags, description, image, imageFirst }: ProjectEntryProps) {
+function CapabilityEntry({ title, description, image, imageFirst }: CapabilityEntryProps) {
   const imageBlock = (
-    <div className="h-[300px] w-full md:h-[541px] md:w-1/2">
+    <div className="relative h-[300px] w-full overflow-hidden rounded-sm shadow-sm md:h-[541px] md:w-1/2">
       <img src={image} alt={title} className="h-full w-full object-cover" />
+      {/* Subtle grey overlay */}
+      <div className="pointer-events-none absolute inset-0 bg-black/[0.06]" />
     </div>
   );
 
   const textBlock = (
     <div className="flex w-full items-center justify-start bg-white p-8 md:w-1/2 md:p-16">
       <div className="max-w-[592px]">
-        {/* Tags */}
-        <div className="mb-4 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <span
-              key={tag}
-              className="font-sans text-[12px] font-normal leading-tight text-[#333333] md:text-[14px] md:leading-[17.07px]"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
         {/* Title */}
         <h3 className="mb-4 font-sans text-[36px] font-normal leading-tight text-black md:text-[58px] md:leading-[70.7px]">
           {title}

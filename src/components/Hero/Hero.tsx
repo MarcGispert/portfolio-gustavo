@@ -44,15 +44,8 @@ export function Hero() {
           {/* Main headline - Using H1 typography tokens */}
           <ScrollPop delay={300}>
             <h1 className="mb-12 max-w-4xl font-sans text-[40px] font-normal leading-[1.2] text-black md:mb-8 md:text-[65px]">
-            Hello! I'm Gustavo – Degree in product design engineering by the Universitat Politècnica de València, specializing in Design for Leisure and Automotive.
+              I'm Gustavo, a motorcycle design engineer with 15+ years of experience, providing end-to-end development from concept to production.
             </h1>
-          </ScrollPop>
-
-          {/* Supporting text - Using body typography tokens */}
-          <ScrollPop delay={400}>
-            <p className="max-w-3xl font-sans text-[24px] font-normal leading-relaxed text-black md:text-[18px] md:text-gray-600">
-              Since 1990, we've helped businesses pivot, grow, simplify, stand out, and start over. Sometimes all at once. We build the right team around what your business actually needs.
-            </p>
           </ScrollPop>
         </div>
       </Container>
