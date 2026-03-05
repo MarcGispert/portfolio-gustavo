@@ -50,27 +50,23 @@ export function ProjectDetail() {
 
       {/* Main content - offset for fixed header */}
       <main className="pt-20">
-        {/* Hero Section - Full width with image + gradient overlay */}
+        {/* Hero Section - Full width with image */}
         <section
           className="relative h-[500px] w-full bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          {/* Gradient Overlay: 80% -> 40% -> 0% black, top to bottom */}
+          {/* Uniform overlay for text legibility */}
           <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%)',
-            }}
+            className="pointer-events-none absolute inset-0 z-[1] bg-black/20"
           />
 
-          {/* Hero Text - Positioned at bottom */}
-          <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-12">
+          {/* Hero Text - Positioned at bottom, above scrim */}
+          <div className="relative z-[2] flex h-full flex-col justify-end p-6 md:p-12">
             <div className="mx-auto w-full max-w-[1440px]">
-              <h1 className="mb-[10px] font-sans text-[65px] font-normal leading-[79.235px] text-white">
+              <h1 className="mb-[10px] font-sans text-[65px] font-normal leading-[79.235px] text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
                 {project.title}
               </h1>
-              <p className="font-sans text-[24px] font-semibold leading-[29.256px] text-white">
+              <p className="font-sans text-[24px] font-semibold leading-[29.256px] text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
                 {project.tags[0]}
               </p>
             </div>

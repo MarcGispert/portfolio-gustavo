@@ -7,12 +7,10 @@ import { ScrollPop } from '../components/ScrollPop';
 // Placeholder for avatar image
 import avatarPlaceholder from '../assets/Gustavo_bn2.jpg';
 
-// Placeholder for company logos
-const logos = {
-  ossa: '/logo-header.svg', // TODO: Replace with actual OSSA logo from Figma
-  gasgas: '/gasgas-logo.svg', // TODO: Replace with actual GAS GAS logo from Figma
-  btwice: '/logo-header.svg', // TODO: Replace with actual BTWICE logo from Figma
-};
+// Company logos
+import logoOssa from '../assets/logo-ossa.png';
+import logoGasgas from '../assets/logo-gasgas.png';
+import logoBtwice from '../assets/logo-btwice.png';
 
 export function About() {
   return (
@@ -116,7 +114,7 @@ export function About() {
                   </p>
                 </div>
                 <div className="md:w-1/5">
-                  <img src={logos.ossa} alt="OSSA" className="h-auto w-24 opacity-80" />
+                  <img src={logoOssa} alt="OSSA" className="h-auto w-24" />
                 </div>
               </div>
 
@@ -138,7 +136,7 @@ export function About() {
                   </p>
                 </div>
                 <div className="md:w-1/5">
-                  <img src={logos.gasgas} alt="GAS GAS" className="h-auto w-24 opacity-80" />
+                  <img src={logoGasgas} alt="GAS GAS" className="h-auto w-24" />
                 </div>
               </div>
 
@@ -158,7 +156,7 @@ export function About() {
                   </p>
                 </div>
                 <div className="md:w-1/5">
-                  <img src={logos.btwice} alt="BTWICE" className="h-auto w-24 opacity-80" />
+                  <img src={logoBtwice} alt="BTWICE" className="h-auto w-24" />
                 </div>
               </div>
             </div>
@@ -179,12 +177,9 @@ export function About() {
         <section className="w-full bg-white px-6 py-16 md:px-12 md:py-24">
           <Container>
             <div className="text-center">
-              <h2 className="mb-4 font-sans text-[40px] font-normal leading-tight text-black md:text-[58px] md:leading-[70.7px]">
-                Selected Concept & Sketching Projects
-              </h2>
-              <p className="mb-8 font-sans text-[20px] font-normal leading-relaxed text-black md:text-[24px]">
+              <h2 className="mb-8 font-sans text-[40px] font-normal leading-tight text-black md:text-[58px] md:leading-[70.7px]">
                 Available for freelance motorcycle design and engineering projects.
-              </p>
+              </h2>
               <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:gap-6">
                 <a href="#contact">
                   <Button variant="primary">Get in touch</Button>
