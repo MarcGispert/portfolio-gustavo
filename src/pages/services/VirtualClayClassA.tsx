@@ -14,29 +14,6 @@ import renderingImg from '../../assets/rendering.jpg';
 import virtualRealityImg from '../../assets/virtual-reality.jpg';
 import classASurfacingImg from '../../assets/class-a-surfacing.png';
 
-const capabilityIcons = [
-  {
-    title: 'Virtual Clay Models',
-    description: 'Early ideation and fast visual exploration',
-    icon: Box,
-  },
-  {
-    title: 'Rendering',
-    description: 'Still and 360º videos',
-    icon: Camera,
-  },
-  {
-    title: 'Virtual Reality',
-    description: 'Models for review using VR headsets',
-    icon: View,
-  },
-  {
-    title: 'Class A Surfacing',
-    description: 'Ready for engineering',
-    icon: PenTool,
-  },
-];
-
 const capabilities = [
   {
     id: 1,
@@ -44,6 +21,7 @@ const capabilities = [
     description: 'Early ideation and fast visual exploration',
     image: virtualClayModelsImg,
     imageFirst: true,
+    icon: Box,
   },
   {
     id: 2,
@@ -51,6 +29,7 @@ const capabilities = [
     description: 'Still and 360º videos',
     image: renderingImg,
     imageFirst: false,
+    icon: Camera,
   },
   {
     id: 3,
@@ -58,6 +37,7 @@ const capabilities = [
     description: 'Models for review using VR headsets',
     image: virtualRealityImg,
     imageFirst: true,
+    icon: View,
   },
   {
     id: 4,
@@ -65,6 +45,7 @@ const capabilities = [
     description: 'Ready for engineering',
     image: classASurfacingImg,
     imageFirst: false,
+    icon: PenTool,
   },
 ];
 
@@ -133,35 +114,6 @@ export function VirtualClayClassA() {
           </Container>
         </section>
 
-        {/* Key Capabilities Band */}
-        <section className="w-full bg-black px-6 py-16 text-white md:px-12 md:py-24">
-          <Container>
-            <ScrollPop>
-              <h2 className="mb-12 text-center font-sans text-[40px] font-normal leading-tight md:mb-16 md:text-[58px] md:leading-[70.7px]">
-                Key capabilities
-              </h2>
-            </ScrollPop>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-6">
-              {capabilityIcons.map((capability) => {
-                const Icon = capability.icon;
-                return (
-                  <div key={capability.title} className="flex flex-col items-center md:items-start">
-                    <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white/10">
-                      <Icon className="h-12 w-12 text-white" strokeWidth={1.5} />
-                    </div>
-                    <h3 className="mb-2 text-center font-sans text-[20px] font-semibold uppercase text-white md:text-left md:text-[24px]">
-                      {capability.title}
-                    </h3>
-                    <p className="text-center font-sans text-[16px] font-normal leading-relaxed text-white/90 md:text-left md:text-[18px]">
-                      {capability.description}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </Container>
-        </section>
-
         {/* Capabilities Section */}
         <section className="w-full bg-white py-16 md:py-24">
           {/* Section Title */}
@@ -198,9 +150,10 @@ interface CapabilityEntryProps {
   description: string;
   image: string;
   imageFirst: boolean;
+  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
 }
 
-function CapabilityEntry({ title, description, image, imageFirst }: CapabilityEntryProps) {
+function CapabilityEntry({ title, description, image, imageFirst, icon: Icon }: CapabilityEntryProps) {
   const imageBlock = (
     <div className="relative h-[300px] w-full overflow-hidden rounded-sm shadow-sm md:h-[541px] md:w-1/2">
       <img src={image} alt={title} className="h-full w-full object-cover" />
@@ -212,10 +165,13 @@ function CapabilityEntry({ title, description, image, imageFirst }: CapabilityEn
   const textBlock = (
     <div className="flex w-full items-center justify-start bg-white p-8 md:w-1/2 md:p-16">
       <div className="max-w-[592px]">
-        {/* Title */}
-        <h3 className="mb-4 font-sans text-[36px] font-normal leading-tight text-black md:text-[58px] md:leading-[70.7px]">
-          {title}
-        </h3>
+        {/* Title with Icon */}
+        <div className="mb-4 flex items-center gap-3">
+          <Icon className="h-7 w-7 shrink-0 text-[#333]" strokeWidth={1.5} />
+          <h3 className="font-sans text-[36px] font-normal leading-tight text-black md:text-[58px] md:leading-[70.7px]">
+            {title}
+          </h3>
+        </div>
 
         {/* Description */}
         <p className="mb-6 font-sans text-[16px] font-normal leading-relaxed text-black md:text-[18px] md:leading-[21.94px]">

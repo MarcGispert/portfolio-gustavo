@@ -20,34 +20,6 @@ import graphicsImg from '../../assets/graphics-interfaces.jpg';
 /*  Data                                                              */
 /* ------------------------------------------------------------------ */
 
-const capabilityIcons = [
-  {
-    title: 'Paper Sketching',
-    description: 'Early ideation and fast visual exploration',
-    icon: Pencil,
-  },
-  {
-    title: '2D Raster',
-    description: 'Photoshop and Wacom-based workflows',
-    icon: Brush,
-  },
-  {
-    title: '2D Vector',
-    description: 'Clean and precise concept definition',
-    icon: PenTool,
-  },
-  {
-    title: 'AI Enhancing',
-    description: 'Fast iterations and visual refinement',
-    icon: Sparkles,
-  },
-  {
-    title: 'Graphics & Interfaces',
-    description: 'Dashboards, UI and product graphics',
-    icon: LayoutDashboard,
-  },
-];
-
 const capabilities = [
   {
     id: 1,
@@ -55,6 +27,7 @@ const capabilities = [
     description: 'Early ideation and fast visual exploration',
     image: paperSketchingImg,
     imageFirst: true,
+    icon: Pencil,
   },
   {
     id: 2,
@@ -62,6 +35,7 @@ const capabilities = [
     description: 'Photoshop and Wacom-based workflows',
     image: rasterImg,
     imageFirst: false,
+    icon: Brush,
   },
   {
     id: 3,
@@ -69,6 +43,7 @@ const capabilities = [
     description: 'Clean and precise concept definition',
     image: vectorImg,
     imageFirst: true,
+    icon: PenTool,
   },
   {
     id: 4,
@@ -76,6 +51,7 @@ const capabilities = [
     description: 'Fast iterations and visual refinement',
     image: aiEnhancingImg,
     imageFirst: false,
+    icon: Sparkles,
   },
   {
     id: 5,
@@ -83,6 +59,7 @@ const capabilities = [
     description: 'Dashboards, UI and product graphics',
     image: graphicsImg,
     imageFirst: true,
+    icon: LayoutDashboard,
   },
 ];
 
@@ -134,43 +111,6 @@ export function ConceptSketching() {
           </Container>
         </section>
 
-        {/* Key Capabilities Band */}
-        <section className="w-full bg-black px-6 py-16 text-white md:px-12 md:py-24">
-          <Container>
-            {/* Section Title */}
-            <ScrollPop>
-              <h2 className="mb-12 text-center font-sans text-[40px] font-normal leading-tight md:mb-16 md:text-[58px] md:leading-[70.7px]">
-                Key capabilities
-              </h2>
-            </ScrollPop>
-
-            {/* Capabilities Grid */}
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-5 md:gap-6">
-              {capabilityIcons.map((capability) => {
-                const Icon = capability.icon;
-                return (
-                  <div key={capability.title} className="flex flex-col items-center md:items-start">
-                    {/* Icon */}
-                    <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white/10">
-                      <Icon className="h-12 w-12 text-white" strokeWidth={1.5} />
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="mb-2 text-center font-sans text-[20px] font-semibold uppercase text-white md:text-left md:text-[24px]">
-                      {capability.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-center font-sans text-[16px] font-normal leading-relaxed text-white/90 md:text-left md:text-[18px]">
-                      {capability.description}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </Container>
-        </section>
-
         {/* Capabilities Section */}
         <section className="w-full bg-white py-16 md:py-24">
           {/* Section Title */}
@@ -207,9 +147,10 @@ interface CapabilityEntryProps {
   description: string;
   image: string;
   imageFirst: boolean;
+  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
 }
 
-function CapabilityEntry({ title, description, image, imageFirst }: CapabilityEntryProps) {
+function CapabilityEntry({ title, description, image, imageFirst, icon: Icon }: CapabilityEntryProps) {
   const imageBlock = (
     <div className="relative h-[300px] w-full overflow-hidden rounded-sm shadow-sm md:h-[541px] md:w-1/2">
       <img src={image} alt={title} className="h-full w-full object-cover" />
@@ -221,10 +162,13 @@ function CapabilityEntry({ title, description, image, imageFirst }: CapabilityEn
   const textBlock = (
     <div className="flex w-full items-center justify-start bg-white p-8 md:w-1/2 md:p-16">
       <div className="max-w-[592px]">
-        {/* Title */}
-        <h3 className="mb-4 font-sans text-[36px] font-normal leading-tight text-black md:text-[58px] md:leading-[70.7px]">
-          {title}
-        </h3>
+        {/* Title with Icon */}
+        <div className="mb-4 flex items-center gap-3">
+          <Icon className="h-7 w-7 shrink-0 text-[#333]" strokeWidth={1.5} />
+          <h3 className="font-sans text-[36px] font-normal leading-tight text-black md:text-[58px] md:leading-[70.7px]">
+            {title}
+          </h3>
+        </div>
 
         {/* Description */}
         <p className="mb-6 font-sans text-[16px] font-normal leading-relaxed text-black md:text-[18px] md:leading-[21.94px]">
