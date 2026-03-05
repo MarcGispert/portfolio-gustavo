@@ -3,7 +3,7 @@ import { Footer } from '../../components/Footer';
 import { Container } from '../../components/Container';
 import { Button } from '../../components/Button/Button';
 import { ScrollPop } from '../../components/ScrollPop';
-import { ArrowRightCircle } from 'lucide-react';
+import { ArrowRightCircle, Pencil, Brush, PenTool, Sparkles, LayoutDashboard } from 'lucide-react';
 
 // Placeholder images - using existing assets
 import heroImg from '../../assets/hero-bike.jpg';
@@ -19,6 +19,34 @@ import graphicsImg from '../../assets/graphics-interfaces.jpg';
 /* ------------------------------------------------------------------ */
 /*  Data                                                              */
 /* ------------------------------------------------------------------ */
+
+const capabilityIcons = [
+  {
+    title: 'Paper Sketching',
+    description: 'Early ideation and fast visual exploration',
+    icon: Pencil,
+  },
+  {
+    title: '2D Raster',
+    description: 'Photoshop and Wacom-based workflows',
+    icon: Brush,
+  },
+  {
+    title: '2D Vector',
+    description: 'Clean and precise concept definition',
+    icon: PenTool,
+  },
+  {
+    title: 'AI Enhancing',
+    description: 'Fast iterations and visual refinement',
+    icon: Sparkles,
+  },
+  {
+    title: 'Graphics & Interfaces',
+    description: 'Dashboards, UI and product graphics',
+    icon: LayoutDashboard,
+  },
+];
 
 const capabilities = [
   {
@@ -103,6 +131,43 @@ export function ConceptSketching() {
               Large experience in early product definition and concept development, helping brands
               transform ideas into clear, feasible and distinctive motorcycle concepts.
             </p>
+          </Container>
+        </section>
+
+        {/* Key Capabilities Band */}
+        <section className="w-full bg-black px-6 py-16 text-white md:px-12 md:py-24">
+          <Container>
+            {/* Section Title */}
+            <ScrollPop>
+              <h2 className="mb-12 text-center font-sans text-[40px] font-normal leading-tight md:mb-16 md:text-[58px] md:leading-[70.7px]">
+                Key capabilities
+              </h2>
+            </ScrollPop>
+
+            {/* Capabilities Grid */}
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-5 md:gap-6">
+              {capabilityIcons.map((capability) => {
+                const Icon = capability.icon;
+                return (
+                  <div key={capability.title} className="flex flex-col items-center md:items-start">
+                    {/* Icon */}
+                    <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white/10">
+                      <Icon className="h-12 w-12 text-white" strokeWidth={1.5} />
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="mb-2 text-center font-sans text-[20px] font-semibold uppercase text-white md:text-left md:text-[24px]">
+                      {capability.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-center font-sans text-[16px] font-normal leading-relaxed text-white/90 md:text-left md:text-[18px]">
+                      {capability.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </Container>
         </section>
 

@@ -3,7 +3,7 @@ import { Footer } from '../../components/Footer';
 import { Container } from '../../components/Container';
 import { Button } from '../../components/Button/Button';
 import { ScrollPop } from '../../components/ScrollPop';
-import { ArrowRightCircle } from 'lucide-react';
+import { ArrowRightCircle, Layers, Scan, GitFork, Package, Activity, CircleDot } from 'lucide-react';
 
 import heroImg from '../../assets/hero-bike.jpg';
 import engineeringImg from '../../assets/Engineering.png';
@@ -16,6 +16,39 @@ import swingarmImg from '../../assets/swingarm-design.jpg';
 import seatsFuelImg from '../../assets/seats-fuel.jpg';
 import rimDesignImg from '../../assets/rim-design.webp';
 import suspensionImg from '../../assets/suspension-components.png';
+
+const capabilityIcons = [
+  {
+    title: 'Plastics R&D',
+    description: 'A- and B-side plastics development ready for injection moulding.',
+    icon: Layers,
+  },
+  {
+    title: 'Frame Design & FEM',
+    description: 'Frame design with FEM optimization and structural validation.',
+    icon: Scan,
+  },
+  {
+    title: 'Swingarm Design',
+    description: 'Off-road and on-road swingarms, single or double-sided, with advanced tensioning systems.',
+    icon: GitFork,
+  },
+  {
+    title: 'Seats & Fuel Systems',
+    description: 'Seats, fuel tanks and accessory parts designed for real manufacturing.',
+    icon: Package,
+  },
+  {
+    title: 'Suspension Components',
+    description: 'Fork clamps and suspension linkages with kinematic and progression optimization.',
+    icon: Activity,
+  },
+  {
+    title: 'Rim Design',
+    description: 'Scooter rim design for casting, with or without sand cores.',
+    icon: CircleDot,
+  },
+];
 
 const capabilities = [
   {
@@ -97,6 +130,35 @@ export function Engineering() {
             <p className="max-w-4xl font-sans text-[24px] font-normal leading-[1.2] tracking-[0.063em] text-black md:text-[30px] md:leading-[36px] md:tracking-[1.9px]">
               TORROT Velocipedo I designed the front train tilting and suspension system, as well as the engineering and development of the plastics
             </p>
+          </Container>
+        </section>
+
+        {/* Key Capabilities Band */}
+        <section className="w-full bg-black px-6 py-16 text-white md:px-12 md:py-24">
+          <Container>
+            <ScrollPop>
+              <h2 className="mb-12 text-center font-sans text-[40px] font-normal leading-tight md:mb-16 md:text-[58px] md:leading-[70.7px]">
+                Key capabilities
+              </h2>
+            </ScrollPop>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-6">
+              {capabilityIcons.map((capability) => {
+                const Icon = capability.icon;
+                return (
+                  <div key={capability.title} className="flex flex-col items-center md:items-start">
+                    <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white/10">
+                      <Icon className="h-12 w-12 text-white" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="mb-2 text-center font-sans text-[20px] font-semibold uppercase text-white md:text-left md:text-[24px]">
+                      {capability.title}
+                    </h3>
+                    <p className="text-center font-sans text-[16px] font-normal leading-relaxed text-white/90 md:text-left md:text-[18px]">
+                      {capability.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </Container>
         </section>
 

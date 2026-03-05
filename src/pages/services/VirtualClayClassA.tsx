@@ -3,7 +3,7 @@ import { Footer } from '../../components/Footer';
 import { Container } from '../../components/Container';
 import { Button } from '../../components/Button/Button';
 import { ScrollPop } from '../../components/ScrollPop';
-import { ArrowRightCircle } from 'lucide-react';
+import { ArrowRightCircle, Box, Camera, View, PenTool } from 'lucide-react';
 
 import heroImg from '../../assets/hero-bike.jpg';
 import virtualClayImg from '../../assets/virtual-clay .png';
@@ -13,6 +13,29 @@ import virtualClayModelsImg from '../../assets/virtual-clay-models.png';
 import renderingImg from '../../assets/rendering.jpg';
 import virtualRealityImg from '../../assets/virtual-reality.jpg';
 import classASurfacingImg from '../../assets/class-a-surfacing.png';
+
+const capabilityIcons = [
+  {
+    title: 'Virtual Clay Models',
+    description: 'Early ideation and fast visual exploration',
+    icon: Box,
+  },
+  {
+    title: 'Rendering',
+    description: 'Still and 360º videos',
+    icon: Camera,
+  },
+  {
+    title: 'Virtual Reality',
+    description: 'Models for review using VR headsets',
+    icon: View,
+  },
+  {
+    title: 'Class A Surfacing',
+    description: 'Ready for engineering',
+    icon: PenTool,
+  },
+];
 
 const capabilities = [
   {
@@ -107,6 +130,35 @@ export function VirtualClayClassA() {
             <p className="max-w-4xl font-sans text-[24px] font-normal leading-[1.2] tracking-[0.063em] text-black md:text-[30px] md:leading-[36px] md:tracking-[1.9px]">
               I have developed and refined a set of techniques for virtual clay modeling and Class A surfacing, helping brands achieve production-ready surfaces with precision and aesthetic excellence.
             </p>
+          </Container>
+        </section>
+
+        {/* Key Capabilities Band */}
+        <section className="w-full bg-black px-6 py-16 text-white md:px-12 md:py-24">
+          <Container>
+            <ScrollPop>
+              <h2 className="mb-12 text-center font-sans text-[40px] font-normal leading-tight md:mb-16 md:text-[58px] md:leading-[70.7px]">
+                Key capabilities
+              </h2>
+            </ScrollPop>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-6">
+              {capabilityIcons.map((capability) => {
+                const Icon = capability.icon;
+                return (
+                  <div key={capability.title} className="flex flex-col items-center md:items-start">
+                    <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white/10">
+                      <Icon className="h-12 w-12 text-white" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="mb-2 text-center font-sans text-[20px] font-semibold uppercase text-white md:text-left md:text-[24px]">
+                      {capability.title}
+                    </h3>
+                    <p className="text-center font-sans text-[16px] font-normal leading-relaxed text-white/90 md:text-left md:text-[18px]">
+                      {capability.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </Container>
         </section>
 
