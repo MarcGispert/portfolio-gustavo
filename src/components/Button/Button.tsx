@@ -15,6 +15,7 @@ const base = [
   'bg-transparent text-white',                 // New default: no border, transparent bg, white text
   'font-sans font-normal text-[14px] md:text-[18px] uppercase leading-none', // Responsive font size
   'transition-all duration-200',
+  'cursor-pointer',                            // Ensure pointer cursor on hover
   'hover:text-white/90 hover:bg-white/5',
   'active:text-white/80 active:bg-white/10',
   'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50',

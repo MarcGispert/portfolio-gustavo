@@ -52,7 +52,7 @@ export function Services() {
   return (
     <section className="w-full bg-black text-white">
       {/* SERVICES HEADER */}
-      <div className="bg-black pb-0 pt-12 md:pb-12 md:pt-24">
+      <div className="bg-black pb-6 pt-12 md:pb-12 md:pt-24">
         <Container className="px-6 md:px-12">
           <ScrollPop>
             <h2 className="mb-2 font-sans text-[52px] font-normal uppercase leading-[1.1] tracking-wide md:text-[80px]">
