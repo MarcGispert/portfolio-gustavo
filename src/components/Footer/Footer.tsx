@@ -61,10 +61,10 @@ export function Footer() {
 
             {/* Email */}
             <a
-              href="mailto:gustavo@higon.design"
+              href="mailto:info@gustavohigon.com"
               className="font-sans text-[18px] font-bold text-white transition-colors hover:text-gray-400 md:text-body-md"
             >
-              gustavo@higon.design
+              info@gustavohigon.com
             </a>
             </div>
           </div>
