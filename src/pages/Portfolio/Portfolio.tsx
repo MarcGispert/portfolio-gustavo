@@ -15,8 +15,7 @@ const gridLayout = [
   { slug: 'gavares', desktopGridClass: 'col-span-1', hideOnMobile: false },
   { slug: 'ossa', desktopGridClass: 'col-span-2', hideOnMobile: false },
   { slug: 'e-racer-rugged', desktopGridClass: 'col-span-1', hideOnMobile: false },
-  { slug: 'torrot-muvi', desktopGridClass: 'col-span-1', hideOnMobile: false },
-  { slug: 'torrot-velocipedo', desktopGridClass: 'col-span-1', hideOnMobile: true },
+  { slug: 'torrot', desktopGridClass: 'col-span-1', hideOnMobile: false },
   { slug: 'facomsa', desktopGridClass: 'col-span-1', hideOnMobile: false },
   { slug: 'ghion', desktopGridClass: 'col-span-1', hideOnMobile: false },
   { slug: 'alpha-boar', desktopGridClass: 'col-span-1', hideOnMobile: true },
@@ -26,7 +25,7 @@ const projects = projectsData.map((project) => {
   const layout = gridLayout.find(l => l.slug === project.slug) || { desktopGridClass: 'col-span-1', hideOnMobile: false };
   return {
     ...project,
-    image: project.galleryImages?.[0] || project.heroImage,
+    image: project.heroImage || project.galleryImages?.[0],
     category: project.tags[0],
     ...layout,
   };

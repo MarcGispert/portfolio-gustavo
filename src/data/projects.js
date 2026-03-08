@@ -10,7 +10,7 @@ export const projects = [
   {
     slug: "italjet",
     title: "ITALJET",
-    description: "I've worked closely with Italjet for several years.\nI designed the frame, plastics, handlebar and other parts of the Italjet Dragster.\nI've also been involved in the early 3D stages of several Italjet projects such as the Dragster 700 twin, the Dragster Speedstere Roadster, using my Virtual Clay techiques.",
+    description: "I've worked closely with Italjet for several years.\nI designed the frame, plastics, handlebar and other parts of the Italjet Dragster.\nI've also been involved in the early 3D stages of several Italjet projects such as the Dragster 700 twin, the Dragster Speedster  and the Roadster, using my Virtual Clay techiques.",
     tags: ["Frame", "Plastics", "Handlebar", "Virtual Clay", "Early 3D"],
     heroImage: "/images/projects/italjet/hero.jpg",
     galleryImages: ["/images/projects/italjet/01.jpg", "/images/projects/italjet/02.jpg", "/images/projects/italjet/03.jpg"]
@@ -40,20 +40,12 @@ export const projects = [
     galleryImages: ["/images/projects/e-racer-rugged/01.jpg", "/images/projects/e-racer-rugged/02.jpg", "/images/projects/e-racer-rugged/03.jpg"]
   },
   {
-    slug: "torrot-muvi",
-    title: "TORROT MUVI",
-    description: "As a part of the Btwice team I designed and industrialized many parts of the Torrot Muvi Range.",
-    tags: ["Industrialization", "Parts design"],
-    heroImage: "/images/projects/torrot-muvi/hero.jpg",
-    galleryImages: ["/images/projects/torrot-muvi/01.jpg", "/images/projects/torrot-muvi/02.jpg", "/images/projects/torrot-muvi/03.jpg"]
-  },
-  {
-    slug: "torrot-velocipedo",
-    title: "TORROT VELOCIPEDO",
-    description: "For the Torrot Velocipedo project I designed the front train tilting and suspension system, and I conducted the the engineering and development of the plastics.",
-    tags: ["Tilting front train", "Suspension system", "Plastics engineering"],
+    slug: "torrot",
+    title: "TORROT",
+    description: "For the Torrot Velocipedo project I designed the front train tilting and suspension system, and I conducted the engineering and development of the plastics.\nAs a part of the Btwice team I also designed and industrialized many parts of the Torrot Muvi Range.",
+    tags: ["Tilting front train", "Suspension system", "Plastics engineering", "Industrialization", "Parts design"],
     heroImage: "/images/projects/torrot-velocipedo/hero.jpg",
-    galleryImages: ["/images/projects/torrot-velocipedo/01.jpg", "/images/projects/torrot-velocipedo/02.jpg", "/images/projects/torrot-velocipedo/03.jpg"]
+    galleryImages: ["/images/projects/torrot-muvi/04.jpg", "/images/projects/torrot-velocipedo/01.jpg", "/images/projects/torrot-muvi/01.jpg"]
   },
   {
     slug: "facomsa",
