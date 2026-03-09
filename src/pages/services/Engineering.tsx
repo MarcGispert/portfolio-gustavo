@@ -128,7 +128,7 @@ export function Engineering() {
         <section className="w-full bg-white px-6 py-12 md:px-12 md:py-24">
           <Container>
             <p className="max-w-4xl font-sans text-[24px] font-normal leading-[1.2] tracking-[0.063em] text-black md:text-[30px] md:leading-[36px] md:tracking-[1.9px]">
-              For TORROT I designed the front train tilting and suspension system of the Velocipedo, as well as the engineering and development of the plastics. I also designed and industrialized many parts of the Muvi Range.
+              During my 15+ year career in the motorcycle field, I've designed and developed most of the parts that make up a motorcycle, with special emphasys on frame and swingarm, plastics (A side and B side), seats, fuel tanks, battery packs, transmissions, suspension linkages and even 2 Stroke engines exhausts and cylinders.
             </p>
           </Container>
         </section>
