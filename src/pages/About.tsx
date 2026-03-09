@@ -107,7 +107,7 @@ export function About() {
                   <h3 className="mb-2 font-sans text-[24px] font-normal leading-tight text-white md:text-[30px] md:leading-[36px]">
                     Engineer and Responsible
                     <br />
-                    for style in OSSA
+                    for style
                   </h3>
                   <p className="font-sans text-[16px] font-normal text-white/80 md:text-[18px]">
                     OSSA
@@ -129,7 +129,7 @@ export function About() {
                   <h3 className="mb-2 font-sans text-[24px] font-normal leading-tight text-white md:text-[30px] md:leading-[36px]">
                     Engineer and Responsible
                     <br />
-                    for style in the OSSA projects in Gas Gas
+                    for style in the OSSA projects
                   </h3>
                   <p className="font-sans text-[16px] font-normal text-white/80 md:text-[18px]">
                     GAS GAS

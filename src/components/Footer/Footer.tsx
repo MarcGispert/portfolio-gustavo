@@ -7,9 +7,9 @@ const logoSrc = '/logo-footer.svg';
 /* ------------------------------------------------------------------ */
 
 const navLinks = [
-  { label: 'Services', href: '#services' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'About', href: '#about' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Portfolio', href: '/portfolio' },
+  { label: 'About', href: '/about' },
 ];
 
 const legalLinks = [

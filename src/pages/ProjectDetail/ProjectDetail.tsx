@@ -133,6 +133,14 @@ export function ProjectDetail() {
               {/* RIGHT COLUMN - Text Content */}
               <div className="mb-12 w-full md:mb-0 md:w-[678px] md:pl-0">
                 <div className="flex flex-col gap-6">
+                  {/* Subtitle */}
+                  {project.subtitle && (
+                    <ScrollPop>
+                      <h2 className="font-sans text-[30px] font-normal leading-tight text-black md:text-[40px]">
+                        {project.subtitle}
+                      </h2>
+                    </ScrollPop>
+                  )}
                   {/* Body Paragraphs */}
                   <ScrollPop delay={100}>
                     <div className="flex flex-col gap-6">

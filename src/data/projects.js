@@ -2,6 +2,7 @@ export const projects = [
   {
     slug: "gas-gas",
     title: "GAS GAS",
+    subtitle: "EC and TXT projects",
     description: "For the Gas Gas EC250 2018 project, I created the aesthetical concept, plastics, graphics, seat, fuel tank and other small parts.\nI also designed the Gas Gas TXT Racing 2018 Swingarm. It's around 20% lighter than previous version, and features a chain tensioner with hidden spring.",
     tags: ["Concept", "Plastics", "Graphics", "Seat", "Fuel tank", "Swingarm", "Engineering"],
     heroImage: "/images/projects/gas-gas/hero.jpg",
@@ -10,6 +11,7 @@ export const projects = [
   {
     slug: "italjet",
     title: "ITALJET",
+    subtitle: "Dragster range and Roadster",
     description: "I've worked closely with Italjet for several years.\nI designed the frame, plastics, handlebar and other parts of the Italjet Dragster.\nI've also been involved in the early 3D stages of several Italjet projects such as the Dragster 700 twin, the Dragster Speedster  and the Roadster, using my Virtual Clay techiques.",
     tags: ["Frame", "Plastics", "Handlebar", "Virtual Clay", "Early 3D"],
     heroImage: "/images/projects/italjet/hero.jpg",
@@ -18,6 +20,7 @@ export const projects = [
   {
     slug: "ossa",
     title: "OSSA",
+    subtitle: "TRi, Explorer, Enduro and Yankee",
     description: "I was the responsible for style in the TR project for all versions but the very first (launched on autumm 2010). I designed all the graphics, all the new plastics and lots of other parts.\nI created the style of the OSSA Enduro over the base designed by Xiu RDi. I designed all the plastics and graphics, as well as the muffler, in only three weeks before the EICMA 2011 show.\nI designed the Explorer for OSSA alongside with Boris Sánchez. I designed all the plastics, the fuel tank, the seat, the footrests, the passenger holder, the rear brake pedal, the stickers and some other small parts. For the 2014 model I made the restyling and some of the small technical improvements.\nI created as well an official concept of a 4 Stroke reedition of the classic OSSA Yankee",
     tags: ["Style lead", "Plastics", "Graphics", "Muffler", "Fuel tank", "Seat", "Restyling"],
     heroImage: "/images/projects/ossa/hero.jpg",
@@ -26,6 +29,7 @@ export const projects = [
   {
     slug: "gavares",
     title: "GAVARES",
+    subtitle: "Gavares Lite scooter",
     description: "Gavares was an elecric scooter designed and developed by Btwice engineering to be sold in Indonesia, ASEAN countries and Europe.\nI was the product and design responsible of the project. I created the product style and layout and designed the frame, swingarm, seat, plastics and other parts, as well as the graphics and logo.",
     tags: ["Product & design lead", "Style", "Layout", "Frame", "Swingarm", "Seat", "Plastics", "Graphics", "Logo"],
     heroImage: "/images/projects/gavares/hero.jpg",
@@ -34,6 +38,7 @@ export const projects = [
   {
     slug: "e-racer-rugged",
     title: "E-RACER",
+    subtitle: "Rugged range",
     description: "I worked closely with e-Racer in the detail design of the Rugged bodywork and seat.\nI am currently a collaborator and partner in the E-Racer Rugged project",
     tags: ["Bodywork detail design", "Seat design"],
     heroImage: "/images/projects/e-racer-rugged/hero.jpg",
@@ -42,6 +47,7 @@ export const projects = [
   {
     slug: "vertigo",
     title: "VERTIGO",
+    subtitle: "Nitro and Linko",
     description: "I was deeply involved in the Vertigo Nitro project, designing the new plastics and exhaust as well as the modifications conducted in the frame and fuel tank.\nI carried out the whole design of the Vertigo Linko, from the frame and swingarm to the plastics, seat, fuel tank and exhaust.",
     tags: ["Plastics", "Exhaust", "Frame", "Fuel tank", "Swingarm", "Seat"],
     heroImage: "/images/projects/vertigo/hero.jpg",
@@ -50,6 +56,7 @@ export const projects = [
   {
     slug: "torrot",
     title: "TORROT",
+    subtitle: "Velocipedo and Muvi",
     description: "For the Torrot Velocipedo project I designed the front train tilting and suspension system, and I conducted the engineering and development of the plastics.\nAs a part of the Btwice team I also designed and industrialized many parts of the Torrot Muvi Range.",
     tags: ["Tilting front train", "Suspension system", "Plastics engineering", "Industrialization", "Parts design"],
     heroImage: "/images/projects/torrot-velocipedo/hero.jpg",
@@ -58,6 +65,7 @@ export const projects = [
   {
     slug: "facomsa",
     title: "FACOMSA",
+    subtitle: "TFT and LCD Dashboards, lighting systems.",
     description: "As a part of Btwice I have developed for Facomsa dashboards, headlights, blinkers and other hardware.\nI have as well designed interfaces and created the graphics layer of the software in devices with TFT color screens for KTM, Zero Motorcycles, Bajaj, Peugeot scooters and others, where I programmed all the graphics using OpenVg.\nI Also designed hardware and display graphics for Facomsa Everest, Atlantic and iDash dashboards.",
     tags: ["Hardware design", "Interface design", "TFT graphics", "Dashboards", "OpenVG"],
     heroImage: "/images/projects/facomsa/hero.jpg",
@@ -66,6 +74,7 @@ export const projects = [
   {
     slug: "alpha-boar",
     title: "ALPHA BOAR",
+    subtitle: "Aeronauta V8 concept",
     description: "Alpha Boar is a personal project of a V8 cruiser bike, inspired on the American V8 Boss Hoss but trying to do something that makes a little more sense (always speaking about a 300+ hp motorcycle)",
     tags: ["Personal project", "Concept", "V8 cruiser"],
     heroImage: "/images/projects/alpha-boar/hero.jpg",
@@ -74,6 +83,7 @@ export const projects = [
   {
     slug: "ghion",
     title: "GHION",
+    subtitle: "Premium trial bike",
     description: "GHION is a personal project of a high performance trials bike with a frame and swingarm fully made in CNC aluminium and carbon fiber bodywork. Frame, swingarm and link total weight was under 8kg.\nI reached an agreement with a top tier trials manufacturer to use their engines.",
     tags: ["Personal project", "Frame & swingarm", "CNC aluminium", "Carbon fiber bodywork", "Lightweight"],
     heroImage: "/images/projects/ghion/hero.jpg",
