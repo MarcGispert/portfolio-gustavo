@@ -84,6 +84,7 @@ export function Portfolio() {
                     category={project.category}
                     image={project.image}
                     link={`/project/${project.slug}`}
+                    subtitle={project.subtitle}
                   />
                 </div>
               ))}
