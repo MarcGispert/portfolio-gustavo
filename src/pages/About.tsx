@@ -161,15 +161,6 @@ export function About() {
               </div>
             </div>
 
-            {/* Currently Box */}
-            <div className="mt-12 border border-white/20 bg-black/50 p-6 md:p-8">
-              <p className="mb-2 font-sans text-[12px] font-normal uppercase tracking-wider text-white/60 md:text-[14px]">
-                Currently:
-              </p>
-              <p className="font-sans text-[24px] font-normal leading-tight text-white md:text-[30px] md:leading-[36px]">
-                Offering my services as a freelance
-              </p>
-            </div>
           </Container>
         </section>
 
@@ -177,9 +168,12 @@ export function About() {
         <section className="w-full bg-white px-6 py-16 md:px-12 md:py-24">
           <Container>
             <div className="text-center">
-              <h2 className="mb-8 font-sans text-[40px] font-normal leading-tight text-black md:text-[58px] md:leading-[70.7px]">
-                Available for freelance motorcycle design and engineering projects.
+              <h2 className="mb-4 font-sans text-[30px] font-normal leading-tight text-black md:text-[40px] md:leading-[48px]">
+                Currently: available for freelance motorcycle design and engineering projects.
               </h2>
+              <a href="mailto:info@gustavohigon.com" className="font-sans text-[24px] font-normal text-black no-underline transition-colors hover:text-gray-600 md:text-[30px]">
+                info@gustavohigon.com
+              </a>
               <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:gap-6">
                 <a href="#contact">
                   <Button variant="primary">Get in touch</Button>

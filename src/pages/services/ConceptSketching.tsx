@@ -13,7 +13,7 @@ import virtualClayImg from '../../assets/virtual-clay .png';
 import paperSketchingImg from '../../assets/paper-sketching.jpg';
 import rasterImg from '../../assets/2d-raster.jpg';
 import vectorImg from '../../assets/2d-vector.jpg';
-import aiEnhancingImg from '../../assets/ai-enhancing.png';
+import aiEnhancingImg from '../../assets/ai-enhancing.jpg';
 import graphicsImg from '../../assets/graphics-interfaces.jpg';
 
 /* ------------------------------------------------------------------ */
@@ -52,35 +52,35 @@ const capabilities = [
   {
     id: 1,
     title: 'Paper Sketching',
-    description: 'Early ideation and fast visual exploration',
+    description: 'Early ideation and fast visual exploration.\nLoose hand sketches to explore proportion, stance and character.\nThe fastest way to capture and iterate design ideas.',
     image: paperSketchingImg,
     imageFirst: true,
   },
   {
     id: 2,
     title: '2D Raster',
-    description: 'Photoshop and Wacom-based workflows',
+    description: 'Photoshop and Wacom-based workflows.\nDigital sketching and painting for fast concept development.\nFlexible tools to explore surfaces, lighting and mood.',
     image: rasterImg,
     imageFirst: false,
   },
   {
     id: 3,
     title: '2D Vector',
-    description: 'Clean and precise concept definition',
+    description: 'Clean and precise concept definition.\nControlled linework and clearly defined shapes.\nIdeal for refined concepts and presentation-ready graphics.',
     image: vectorImg,
     imageFirst: true,
   },
   {
     id: 4,
     title: 'AI Enhancing',
-    description: 'Fast iterations and visual refinement',
+    description: 'Fast iterations and visual refinement.\nAI-assisted workflows to explore design variations.\nA tool to accelerate ideation and concept visualization.',
     image: aiEnhancingImg,
     imageFirst: false,
   },
   {
     id: 5,
     title: 'Graphics & Interfaces',
-    description: 'Dashboards, UI and product graphics',
+    description: 'Dashboards, UI and product graphics.\nInterface elements designed as part of the product.\nClear visuals aligned with the overall design language.',
     image: graphicsImg,
     imageFirst: true,
   },
@@ -227,12 +227,13 @@ function CapabilityEntry({ title, description, image, imageFirst }: CapabilityEn
         </h3>
 
         {/* Description */}
-        <p className="mb-6 font-sans text-[16px] font-normal leading-relaxed text-black md:text-[18px] md:leading-[21.94px]">
-          {description}
-        </p>
-
-        {/* CTA Button */}
-        <Button variant="text" icon={ArrowRightCircle}>Learn more</Button>
+        <div className="mb-6 flex flex-col gap-3">
+          {description.split('\n').filter((l: string) => l.trim()).map((line: string, i: number) => (
+            <p key={i} className="font-sans text-[16px] font-normal leading-relaxed text-black md:text-[18px] md:leading-[21.94px]">
+              {line}
+            </p>
+          ))}
+        </div>
       </div>
     </div>
   );

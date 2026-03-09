@@ -10,15 +10,16 @@ import { projects as projectsData } from '../../data/projects';
 /* ------------------------------------------------------------------ */
 
 const gridLayout = [
-  { slug: 'gas-gas', desktopGridClass: 'col-span-2', hideOnMobile: false },
-  { slug: 'italjet', desktopGridClass: 'col-span-1', hideOnMobile: false },
-  { slug: 'gavares', desktopGridClass: 'col-span-1', hideOnMobile: false },
-  { slug: 'ossa', desktopGridClass: 'col-span-2', hideOnMobile: false },
-  { slug: 'e-racer-rugged', desktopGridClass: 'col-span-1', hideOnMobile: false },
-  { slug: 'torrot', desktopGridClass: 'col-span-1', hideOnMobile: false },
-  { slug: 'facomsa', desktopGridClass: 'col-span-1', hideOnMobile: false },
-  { slug: 'ghion', desktopGridClass: 'col-span-1', hideOnMobile: false },
-  { slug: 'alpha-boar', desktopGridClass: 'col-span-1', hideOnMobile: true },
+  { slug: 'gas-gas', desktopGridClass: 'md:col-span-2', hideOnMobile: false },
+  { slug: 'italjet', desktopGridClass: 'md:col-span-1', hideOnMobile: false },
+  { slug: 'gavares', desktopGridClass: 'md:col-span-1', hideOnMobile: false },
+  { slug: 'ossa', desktopGridClass: 'md:col-span-2', hideOnMobile: false },
+  { slug: 'e-racer-rugged', desktopGridClass: 'md:col-span-1', hideOnMobile: false },
+  { slug: 'vertigo', desktopGridClass: 'md:col-span-1', hideOnMobile: false },
+  { slug: 'torrot', desktopGridClass: 'md:col-span-1', hideOnMobile: false },
+  { slug: 'facomsa', desktopGridClass: 'md:col-span-1', hideOnMobile: false },
+  { slug: 'ghion', desktopGridClass: 'md:col-span-1', hideOnMobile: false },
+  { slug: 'alpha-boar', desktopGridClass: 'md:col-span-1', hideOnMobile: false },
 ];
 
 const projects = projectsData.map((project) => {

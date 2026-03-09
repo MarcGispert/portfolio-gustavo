@@ -18,7 +18,7 @@ export const projects = [
   {
     slug: "ossa",
     title: "OSSA",
-    description: "I was the responsible for style in the TR project for all versions but the very first (launched on autumm 2010). I designed all the graphics, all the new plastics and lots of other parts.\nI created the style of the OSSA Enduro over the base designed by Xiu RDi. I designed all the plastics and graphics, as well as the muffler, in only three weeks before the EICMA 2011 show.\nI designed the Explorer for OSSA alongside with Boris Sánchez. I designed all the plastics, the fuel tank, the seat, the footrests, the passenger holder, the rear brake pedal, the stickers and some other small parts. For the 2014 model I made the restyling and some of the small technical improvements.",
+    description: "I was the responsible for style in the TR project for all versions but the very first (launched on autumm 2010). I designed all the graphics, all the new plastics and lots of other parts.\nI created the style of the OSSA Enduro over the base designed by Xiu RDi. I designed all the plastics and graphics, as well as the muffler, in only three weeks before the EICMA 2011 show.\nI designed the Explorer for OSSA alongside with Boris Sánchez. I designed all the plastics, the fuel tank, the seat, the footrests, the passenger holder, the rear brake pedal, the stickers and some other small parts. For the 2014 model I made the restyling and some of the small technical improvements.\nI created as well an official concept of a 4 Stroke reedition of the classic OSSA Yankee",
     tags: ["Style lead", "Plastics", "Graphics", "Muffler", "Fuel tank", "Seat", "Restyling"],
     heroImage: "/images/projects/ossa/hero.jpg",
     galleryImages: ["/images/projects/ossa/01.jpg", "/images/projects/ossa/02.jpg", "/images/projects/ossa/03.jpg"]
@@ -34,10 +34,18 @@ export const projects = [
   {
     slug: "e-racer-rugged",
     title: "E-RACER",
-    description: "I worked closely with e-Racer in the detail design of the Rugged bodywork and seat.",
+    description: "I worked closely with e-Racer in the detail design of the Rugged bodywork and seat.\nI am currently a collaborator and partner in the E-Racer Rugged project",
     tags: ["Bodywork detail design", "Seat design"],
     heroImage: "/images/projects/e-racer-rugged/hero.jpg",
     galleryImages: ["/images/projects/e-racer-rugged/01.jpg", "/images/projects/e-racer-rugged/02.jpg", "/images/projects/e-racer-rugged/03.jpg"]
+  },
+  {
+    slug: "vertigo",
+    title: "VERTIGO",
+    description: "I was deeply involved in the Vertigo Nitro project, designing the new plastics and exhaust as well as the modifications conducted in the frame and fuel tank.\nI carried out the whole design of the Vertigo Linko, from the frame and swingarm to the plastics, seat, fuel tank and exhaust.",
+    tags: ["Plastics", "Exhaust", "Frame", "Fuel tank", "Swingarm", "Seat"],
+    heroImage: "/images/projects/vertigo/hero.jpg",
+    galleryImages: ["/images/projects/vertigo/02.jpg", "/images/projects/vertigo/01.jpg", "/images/projects/vertigo/03.jpg"]
   },
   {
     slug: "torrot",
@@ -50,7 +58,7 @@ export const projects = [
   {
     slug: "facomsa",
     title: "FACOMSA",
-    description: "As a part of Btwice I have developed for Facomsa dashboards, headlights, blinkers and other hardware.\nI have as well designed interfaces and created the graphics layer of the software in devices with TFT color screens for KTM, Zero Motorcycles, Bajaj, Peugeot scooters and others, where I programmed all the graphics (design provided by KTM) using OpenVg.\nI Also designed hardware and display graphics for Facomsa Everest, Atlantic and iDash dashboards.",
+    description: "As a part of Btwice I have developed for Facomsa dashboards, headlights, blinkers and other hardware.\nI have as well designed interfaces and created the graphics layer of the software in devices with TFT color screens for KTM, Zero Motorcycles, Bajaj, Peugeot scooters and others, where I programmed all the graphics using OpenVg.\nI Also designed hardware and display graphics for Facomsa Everest, Atlantic and iDash dashboards.",
     tags: ["Hardware design", "Interface design", "TFT graphics", "Dashboards", "OpenVG"],
     heroImage: "/images/projects/facomsa/hero.jpg",
     galleryImages: ["/images/projects/facomsa/01.jpg", "/images/projects/facomsa/02.jpg", "/images/projects/facomsa/03.jpg"]
@@ -69,6 +77,6 @@ export const projects = [
     description: "GHION is a personal project of a high performance trials bike with a frame and swingarm fully made in CNC aluminium and carbon fiber bodywork. Frame, swingarm and link total weight was under 8kg.\nI reached an agreement with a top tier trials manufacturer to use their engines.",
     tags: ["Personal project", "Frame & swingarm", "CNC aluminium", "Carbon fiber bodywork", "Lightweight"],
     heroImage: "/images/projects/ghion/hero.jpg",
-    galleryImages: ["/images/projects/ghion/01.jpg", "/images/projects/ghion/02.jpg", "/images/projects/ghion/03.jpg"]
+    galleryImages: ["/images/projects/ghion/01.jpg"]
   }
 ];

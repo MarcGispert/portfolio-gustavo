@@ -41,28 +41,28 @@ const capabilities = [
   {
     id: 1,
     title: 'Virtual Clay Models',
-    description: 'Early ideation and fast visual exploration',
+    description: 'Early ideation and fast visual exploration.\nDigital sculpting to explore volumes, proportions and surface flow.\nA fast way to evaluate forms before moving into detailed surfacing.',
     image: virtualClayModelsImg,
     imageFirst: true,
   },
   {
     id: 2,
     title: 'Rendering',
-    description: 'Still and 360º videos',
+    description: 'Still and 360º videos.\nHigh-quality visualizations to present design intent and materials.\nClear images that communicate the product before it exists.',
     image: renderingImg,
     imageFirst: false,
   },
   {
     id: 3,
     title: 'Virtual Reality',
-    description: 'Models for review using VR headsets',
+    description: 'Models for review using VR headsets.\nImmersive visualization to evaluate scale, proportions and ergonomics.\nA powerful tool for design reviews and decision making.',
     image: virtualRealityImg,
     imageFirst: true,
   },
   {
     id: 4,
     title: 'Class A Surfacing',
-    description: 'Ready for engineering',
+    description: 'Ready for engineering.\nPrecise surface development with production-quality continuity.\nClean geometry prepared for downstream engineering and manufacturing.',
     image: classASurfacingImg,
     imageFirst: false,
   },
@@ -218,12 +218,13 @@ function CapabilityEntry({ title, description, image, imageFirst }: CapabilityEn
         </h3>
 
         {/* Description */}
-        <p className="mb-6 font-sans text-[16px] font-normal leading-relaxed text-black md:text-[18px] md:leading-[21.94px]">
-          {description}
-        </p>
-
-        {/* CTA Button */}
-        <Button variant="text" icon={ArrowRightCircle}>Learn more</Button>
+        <div className="mb-6 flex flex-col gap-3">
+          {description.split('\n').filter((l: string) => l.trim()).map((line: string, i: number) => (
+            <p key={i} className="font-sans text-[16px] font-normal leading-relaxed text-black md:text-[18px] md:leading-[21.94px]">
+              {line}
+            </p>
+          ))}
+        </div>
       </div>
     </div>
   );

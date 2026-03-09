@@ -78,19 +78,7 @@ export function Footer() {
           {/* ---- Copyright + Legal row ---- */}
           <div className="flex flex-col items-center gap-8 md:flex-row md:items-center md:gap-8">
 
-            {/* Legal links - show first on mobile, last on desktop */}
-            <ul className="flex items-center gap-4 md:order-2">
-              {legalLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="font-body text-base leading-6 text-white transition-colors hover:text-gray-400"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            {/* Legal links - hidden for now */}
 
             {/* Copyright - show last on mobile, first on desktop */}
             <p className="text-center font-body text-base leading-6 text-white md:order-1 md:flex-1 md:text-left">

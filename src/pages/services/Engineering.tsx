@@ -14,7 +14,7 @@ import plasticsRdImg from '../../assets/plastics-rd.png';
 import frameDesignImg from '../../assets/frame-design.jpg';
 import swingarmImg from '../../assets/swingarm-design.jpg';
 import seatsFuelImg from '../../assets/seats-fuel.jpg';
-import rimDesignImg from '../../assets/rim-design.webp';
+import rimDesignImg from '../../assets/rim-design.jpg';
 import suspensionImg from '../../assets/suspension-components.png';
 
 const capabilityIcons = [
@@ -54,42 +54,42 @@ const capabilities = [
   {
     id: 1,
     title: 'Plastics R&D',
-    description: 'A- and B-side plastics development ready for injection moulding.',
+    description: 'A- and B-side plastics development ready for injection moulding.\nDesign focused on manufacturability, assembly and structural behavior.\nFrom early concept surfaces to production-ready plastic parts.',
     image: plasticsRdImg,
     imageFirst: true,
   },
   {
     id: 2,
     title: 'Frame Design & FEM',
-    description: 'Frame design with FEM optimization and structural validation.',
+    description: 'Frame design with FEM optimization and structural validation.\nLightweight structures developed through iterative simulation.\nFocused on stiffness, strength and real-world performance.',
     image: frameDesignImg,
     imageFirst: false,
   },
   {
     id: 3,
     title: 'Swingarm Design',
-    description: 'Off-road and on-road swingarms, single or double-sided, with advanced tensioning systems.',
+    description: 'Off-road and on-road swingarms, single or double-sided.\nOptimized structures with integrated chain or belt tensioning systems.\nDesigned for strength, weight efficiency and manufacturing feasibility.',
     image: swingarmImg,
     imageFirst: true,
   },
   {
     id: 4,
     title: 'Seats & Fuel Systems',
-    description: 'Seats, fuel tanks, exhaust systems (2stroke and 4 stroke) and accessory parts designed for real manufacturing.',
+    description: 'Seats, fuel tanks and accessory parts designed for real manufacturing.\nPackaging-driven design integrated with the vehicle architecture.\nFocused on ergonomics, capacity and production constraints.',
     image: seatsFuelImg,
     imageFirst: false,
   },
   {
     id: 5,
     title: 'Suspension Components',
-    description: 'Fork clamps and suspension linkages with kinematic and progression optimization.',
+    description: 'Fork clamps and suspension linkages with kinematic optimization.\nDevelopment of linkage ratios and suspension progression.\nBalanced performance, stiffness and manufacturability.',
     image: suspensionImg,
     imageFirst: true,
   },
   {
     id: 6,
     title: 'Rim Design',
-    description: 'Scooter rim design for casting, with or without sand cores.',
+    description: 'Scooter rim design for casting, with or without sand cores.\nStructures optimized for weight, strength and production processes.\nClean geometry suitable for industrial casting workflows.',
     image: rimDesignImg,
     imageFirst: false,
   },
@@ -218,12 +218,13 @@ function CapabilityEntry({ title, description, image, imageFirst }: CapabilityEn
         </h3>
 
         {/* Description */}
-        <p className="mb-6 font-sans text-[16px] font-normal leading-relaxed text-black md:text-[18px] md:leading-[21.94px]">
-          {description}
-        </p>
-
-        {/* CTA Button */}
-        <Button variant="text" icon={ArrowRightCircle}>Learn more</Button>
+        <div className="mb-6 flex flex-col gap-3">
+          {description.split('\n').filter((l: string) => l.trim()).map((line: string, i: number) => (
+            <p key={i} className="font-sans text-[16px] font-normal leading-relaxed text-black md:text-[18px] md:leading-[21.94px]">
+              {line}
+            </p>
+          ))}
+        </div>
       </div>
     </div>
   );
